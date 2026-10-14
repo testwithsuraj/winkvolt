@@ -2,7 +2,9 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import { MotionConfig } from "motion/react";
 
+import { SmoothScroll } from "@/components/smooth-scroll";
 import { site } from "@/lib/site";
+import "lenis/dist/lenis.css";
 import "./globals.css";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"], display: "swap" });
@@ -62,7 +64,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         >
           Skip to content
         </a>
-        <MotionConfig reducedMotion="user">{children}</MotionConfig>
+        <MotionConfig reducedMotion="user">
+          <SmoothScroll>{children}</SmoothScroll>
+        </MotionConfig>
       </body>
     </html>
   );

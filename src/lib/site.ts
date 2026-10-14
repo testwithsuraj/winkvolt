@@ -1,7 +1,7 @@
 export const site = {
   name: "WinkVolt",
   url: "https://winkvolt.com",
-  email: "hello@winkvolt.com",
+  email: "info@winkvolt.com",
   tagline: "We build things people play with.",
   description:
     "WinkVolt is a creative technology studio building Snapchat Lenses, Roblox games and mobile apps. 150+ lenses shipped and 500M+ total views.",

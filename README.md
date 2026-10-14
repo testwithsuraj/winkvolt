@@ -7,6 +7,7 @@ Single-page marketing site for **WinkVolt**, a creative technology studio buildi
 - [Next.js](https://nextjs.org) (App Router, TypeScript), statically prerendered
 - [Tailwind CSS v4](https://tailwindcss.com) with the design tokens in `src/app/globals.css`
 - [Motion](https://motion.dev) for reveals, scroll effects and SVG micro-interactions
+- [Lenis](https://lenis.darkroom.engineering) for site-wide smooth scrolling (`src/components/smooth-scroll.tsx`)
 - [Radix UI](https://www.radix-ui.com) primitives (accordion, dialog) wrapped shadcn/ui-style in `src/components/ui`
 
 ## Getting started
@@ -36,9 +37,9 @@ src/
     icon.svg, robots.ts, sitemap.ts
   components/
     sections/             # one component per page section
-      navbar, hero, marquee, stats, services, capabilities,
+      navbar, hero, marquee, stats, services (+ service-stack), capabilities,
       process, statement, faq, contact, footer
-    svg/                  # logo, hero character, service & capability illustrations
+    svg/                  # logo, animated hero scene, service & capability illustrations
     ui/                   # button, accordion, reveal, counter, magnetic, play-area, ...
   lib/
     site.ts               # all copy and content (edit text here)
@@ -53,7 +54,7 @@ Update `site.url` and `site.email` there before going live.
 ## Design notes
 
 - Solid colors only, no gradients: ink `#0e0e0c`, paper `#f2efe8`, volt `#dcff3b`, signal `#ff5b2e`, cobalt `#2f4bff`.
-- Illustrations animate through the custom `play:` Tailwind variant: on hover with a mouse, and automatically when scrolled into view on touch screens (see `components/ui/play-area.tsx`).
+- Illustrations animate through the custom `play:` Tailwind variant: automatically when scrolled into view on every device, and on hover (see `components/ui/play-area.tsx`).
 - Animations respect `prefers-reduced-motion`.
 
 ## Deploying to Vercel

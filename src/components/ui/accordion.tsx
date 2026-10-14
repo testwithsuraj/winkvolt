@@ -63,10 +63,18 @@ function AccordionContent({
   return (
     <AccordionPrimitive.Content
       data-slot="accordion-content"
-      className="overflow-hidden data-[state=closed]:animate-[accordion-up_300ms_var(--ease-out-expo)] data-[state=open]:animate-[accordion-down_400ms_var(--ease-out-expo)]"
+      className="group/content overflow-hidden data-[state=closed]:animate-[accordion-up_450ms_cubic-bezier(0.65,0,0.35,1)_both] data-[state=open]:animate-[accordion-down_600ms_cubic-bezier(0.65,0,0.35,1)_both]"
       {...props}
     >
-      <div className={cn("max-w-2xl pb-7 text-base leading-relaxed text-muted md:text-lg", className)}>{children}</div>
+      <div
+        className={cn(
+          "max-w-2xl pb-7 text-base leading-relaxed text-muted md:text-lg",
+          "group-data-[state=closed]/content:animate-[accordion-fade-out_300ms_ease-out_both] group-data-[state=open]/content:animate-[accordion-fade-in_600ms_cubic-bezier(0.16,1,0.3,1)_120ms_both]",
+          className,
+        )}
+      >
+        {children}
+      </div>
     </AccordionPrimitive.Content>
   );
 }

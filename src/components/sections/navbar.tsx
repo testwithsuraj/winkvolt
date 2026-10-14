@@ -3,6 +3,7 @@
 import * as React from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
+import { useLenis } from "lenis/react";
 
 import { Logo } from "@/components/svg/logo";
 import { Button } from "@/components/ui/button";
@@ -15,6 +16,14 @@ export function Navbar() {
   const [scrolled, setScrolled] = React.useState(false);
   const [hidden, setHidden] = React.useState(false);
   const [open, setOpen] = React.useState(false);
+  const lenis = useLenis();
+
+  // Freeze smooth scrolling behind the open mobile menu.
+  React.useEffect(() => {
+    if (!lenis) return;
+    if (open) lenis.stop();
+    else lenis.start();
+  }, [open, lenis]);
 
   useMotionValueEvent(scrollY, "change", (y) => {
     const prev = scrollY.getPrevious() ?? 0;
@@ -24,9 +33,11 @@ export function Navbar() {
 
   const navigate = (href: string) => {
     setOpen(false);
-    // Wait for the scroll lock to release before scrolling to the section.
+    // Wait for the menu's scroll lock to release before gliding to the section.
     setTimeout(() => {
-      document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+      lenis?.start();
+      if (lenis) lenis.scrollTo(href, { duration: 1.4 });
+      else document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
       history.replaceState(null, "", href);
     }, 80);
   };
@@ -113,7 +124,7 @@ function MobileMenu({ onNavigate }: { onNavigate: (href: string) => void }) {
   const ease = [0.16, 1, 0.3, 1] as const;
   return (
     <Dialog.Portal forceMount>
-      <Dialog.Content forceMount asChild aria-describedby={undefined}>
+      <Dialog.Content forceMount asChild aria-describedby={undefined} data-lenis-prevent="">
         <motion.div
           className="fixed inset-0 z-[70] flex flex-col bg-ink text-paper"
           initial={{ clipPath: "inset(0 0 100% 0)" }}

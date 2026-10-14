@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 /*
- * `play:` styles an element while its nearest [data-play] ancestor is hovered,
- * or, on touch screens, while that ancestor is in view (data-active="true").
+ * `play:` styles an element while its nearest [data-play] ancestor is in view
+ * (data-active="true", set by PlayArea) or hovered.
  */
 @custom-variant play {
   @media (hover: hover) {
@@ -60,8 +60,7 @@
 
 @layer base {
   html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 5rem;
+    scroll-padding-top: 5.5rem;
     -webkit-text-size-adjust: 100%;
   }
 
@@ -87,15 +86,9 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    html {
-      scroll-behavior: auto;
-    }
-    *,
-    *::before,
-    *::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
+    .animate-marquee,
+    .animate-spin-slow {
+      animation-duration: 120s;
     }
   }
 }
@@ -144,21 +137,51 @@
 @keyframes accordion-down {
   from {
     height: 0;
-    opacity: 0;
   }
   to {
     height: var(--radix-accordion-content-height);
-    opacity: 1;
   }
 }
 
 @keyframes accordion-up {
   from {
     height: var(--radix-accordion-content-height);
-    opacity: 1;
   }
   to {
     height: 0;
+  }
+}
+
+@keyframes accordion-fade-in {
+  from {
     opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes accordion-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@layer utilities {
+  .text-hero {
+    font-size: clamp(2.75rem, 11.5vw, 5rem);
+    line-height: 0.92;
+    letter-spacing: -0.045em;
+    font-weight: 600;
+  }
+  @media (min-width: 1024px) {
+    .text-hero {
+      font-size: clamp(3.25rem, min(5.4vw, 10.5vh), 6rem);
+    }
   }
 }

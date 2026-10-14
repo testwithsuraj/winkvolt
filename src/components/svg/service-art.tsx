@@ -75,7 +75,7 @@ function LensArt() {
   );
 }
 
-function Cube({ x, y, s = 1, className }: { x: number; y: number; s?: number; className?: string }) {
+export function Cube({ x, y, s = 1, className }: { x: number; y: number; s?: number; className?: string }) {
   const w = 34 * s;
   const h = 20 * s;
   const d = 40 * s;
