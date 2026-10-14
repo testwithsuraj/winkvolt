@@ -9,6 +9,7 @@ import { ArrowIcon } from "@/components/ui/arrow-icon";
 import { CalendarIcon } from "@/components/ui/calendar-icon";
 import { Magnetic } from "@/components/ui/magnetic";
 import { SplitWords } from "@/components/ui/reveal";
+import { RotatingWord } from "@/components/ui/rotating-word";
 import { site } from "@/lib/site";
 
 const ease = [0.16, 1, 0.3, 1] as const;
@@ -18,6 +19,19 @@ const fadeUp = (delay: number) => ({
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.9, delay, ease },
 });
+
+/** Verbs that complete "We build things people ___ with." */
+const heroWords = ["play", "create", "connect", "shop", "engage"] as const;
+
+/** Inline "coming soon" marker for services that haven't launched yet. */
+function Soon() {
+  return (
+    <span className="mx-1 inline-flex -translate-y-px items-center gap-1 rounded-full bg-ink px-2 py-0.5 align-middle font-mono text-[0.6rem] leading-none tracking-[0.12em] text-paper uppercase">
+      <span className="size-1 rounded-full bg-volt" />
+      Soon
+    </span>
+  );
+}
 
 export function Hero() {
   return (
@@ -36,33 +50,33 @@ export function Hero() {
               <span className="size-2 animate-pulse rounded-full bg-volt" />
             </span>
             <span className="font-medium">Creative tech studio</span>
-            <span className="hidden text-muted sm:inline">· Snapchat Lenses</span>
+            <span className="hidden text-muted sm:inline">· AR, games &amp; apps</span>
           </motion.div>
 
           <h1 className="text-hero lg:whitespace-nowrap">
-            <SplitWords text="We build things" className="block" />
-            <span className="block">
-              <SplitWords text="people" delay={0.12} />{" "}
-              <span className="inline-block overflow-hidden pb-[0.14em] align-bottom">
-                <motion.span
-                  className="inline-block bg-volt px-[0.12em] font-serif font-normal tracking-[-0.02em] italic"
-                  initial={{ y: "110%" }}
-                  animate={{ y: "0%" }}
-                  transition={{ duration: 1, delay: 0.22, ease }}
-                >
-                  play
-                </motion.span>
+            <span className="sr-only">We build things people play with.</span>
+            <span aria-hidden>
+              <SplitWords text="We build things" className="block" />
+              <span className="block">
+                <SplitWords text="people" delay={0.12} />{" "}
+                <RotatingWord
+                  words={heroWords}
+                  delay={0.22}
+                  className="bg-volt"
+                  wordClassName="font-serif font-normal tracking-[-0.02em] italic"
+                />
               </span>
+              <SplitWords text="with." delay={0.3} className="block" />
             </span>
-            <SplitWords text="with." delay={0.3} className="block" />
           </h1>
 
           <motion.p
             {...fadeUp(0.45)}
             className="mt-6 max-w-lg text-lg leading-relaxed text-muted sm:text-xl lg:mt-[min(1.5rem,3vh)] lg:max-w-md lg:text-[clamp(1rem,2.3vh,1.2rem)]"
           >
-            WinkVolt designs and builds Snapchat Lenses that people open, play and share, again and again. Roblox
-            games and mobile apps are coming soon.
+            WinkVolt designs and builds Snapchat Lenses, Roblox games
+            <Soon /> and mobile apps
+            <Soon /> that people open, play and share, again and again.
           </motion.p>
 
           <motion.div

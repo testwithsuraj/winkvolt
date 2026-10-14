@@ -65,7 +65,7 @@ export const navItems = [
   { label: "Services", href: "/#services", dropdown: true },
   { label: "About", href: "/about", dropdown: false },
   { label: "Process", href: "/#process", dropdown: false },
-  { label: "FAQ", href: "/#faq", dropdown: false },
+  { label: "Blog", href: "/blog", dropdown: false },
   { label: "Contact", href: "/contact", dropdown: false },
 ] as const;
 

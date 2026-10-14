@@ -1,3 +1,4 @@
+import { getCategory, postHref, postMarkdown, sortedPosts } from "@/lib/blog";
 import { pages } from "@/lib/pages";
 import { capabilities, faqs, process, services, site, stats } from "@/lib/site";
 
@@ -18,11 +19,18 @@ export function llmsTxt() {
     "",
     "## Pages",
     "",
-    ...pages.filter((p) => p.priority >= 0.5).map((p) => `- [${p.title}](${abs(p.path)}): ${p.summary}`),
+    ...pages
+      .filter((p) => p.priority >= 0.6 && !p.path.startsWith("/blog/"))
+      .map((p) => `- [${p.title}](${abs(p.path)}): ${p.summary}`),
+    "",
+    "## Blog",
+    "",
+    ...sortedPosts().map((p) => `- [${p.title}](${abs(postHref(p.slug))}): ${p.answer}`),
     "",
     "## Optional",
     "",
     `- [Full details](${site.url}/llms-full.txt): services, capabilities, process and FAQ in one file`,
+    `- [RSS feed](${site.url}/blog/rss.xml)`,
     ...pages.filter((p) => p.priority < 0.5).map((p) => `- [${p.title}](${abs(p.path)})`),
     "",
   ].join("\n");
@@ -62,5 +70,12 @@ export function llmsFullTxt() {
     "## FAQ",
     "",
     ...faqs.flatMap((f) => [`### ${f.q}`, "", f.a, ""]),
+    "# Blog",
+    "",
+    ...sortedPosts().flatMap((p) => [
+      postMarkdown(p),
+      `Category: ${getCategory(p.category)?.name ?? p.category} · Published ${p.published} · ${abs(postHref(p.slug))}`,
+      "",
+    ]),
   ].join("\n");
 }

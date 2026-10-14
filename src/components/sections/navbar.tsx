@@ -99,9 +99,19 @@ export function Navbar() {
   const [hidden, setHidden] = React.useState(false);
   const [open, setOpen] = React.useState(false);
   const [menuValue, setMenuValue] = React.useState("");
+  const [desktop, setDesktop] = React.useState(true);
   const lenis = useLenis();
   const router = useRouter();
   const pathname = usePathname();
+
+  // On phones the wordmark tucks away once you scroll and slides back in at the top.
+  React.useEffect(() => {
+    const mq = window.matchMedia("(min-width: 768px)");
+    const update = () => setDesktop(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
 
   // Freeze smooth scrolling behind the open mobile menu.
   React.useEffect(() => {
@@ -167,7 +177,7 @@ export function Navbar() {
             )}
           >
             <Link href="/" aria-label={`${site.name} home`} className="rounded-full">
-              <Logo />
+              <Logo hideWordmark={scrolled && !desktop} />
             </Link>
 
             <NavigationMenu.Root
@@ -197,7 +207,7 @@ export function Navbar() {
                     </NavigationMenu.Item>
                   ) : (
                     <NavigationMenu.Item key={item.label}>
-                      <NavigationMenu.Link asChild active={pathname === item.href}>
+                      <NavigationMenu.Link asChild active={pathname === item.href || pathname.startsWith(`${item.href}/`)}>
                         <SmartLink
                           href={item.href}
                           className="group relative inline-flex h-10 items-center rounded-full px-4 text-[0.95rem] font-medium data-[active]:bg-paper-2"

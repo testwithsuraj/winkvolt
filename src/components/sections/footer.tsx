@@ -7,6 +7,7 @@ import { legalLinks, serviceHref, services, site } from "@/lib/site";
 const companyLinks = [
   { label: "About", href: "/about" },
   { label: "Process", href: "/#process" },
+  { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "/#faq" },
   { label: "Contact", href: "/contact" },
 ];

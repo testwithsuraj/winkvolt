@@ -35,12 +35,25 @@ npm run dev        # http://localhost:3000
 | `/services/mobile-apps`       | Mobile apps, coming soon                    |
 | `/about`                      | About the studio                            |
 | `/contact`                    | Book a call / email, plus FAQ               |
+| `/blog`                       | Blog index with featured post and category filter |
+| `/blog/category/[category]`   | Category pages (Snapchat Lenses, AR Marketing, Guides, Studio News) |
+| `/blog/[slug]`                | Articles, each with its own OG image        |
+| `/blog/rss.xml`               | RSS feed                                    |
 | `/privacy`, `/terms`          | Legal pages                                 |
 | `/sitemap.xml`, `/robots.txt` | Generated for search engines                |
 | `/llms.txt`, `/llms-full.txt` | Site summary for AI assistants ([llmstxt.org](https://llmstxt.org)) |
 
 Every page has its own title, description, canonical URL and Open Graph tags. The layout adds Organization and
-WebSite JSON-LD, and service pages add Service JSON-LD.
+WebSite JSON-LD, service pages add Service JSON-LD, and the home page adds FAQPage JSON-LD.
+
+### Blog
+
+Posts live in `src/lib/blog.ts` as plain data (inline `**bold**` and `[links](/path)` are supported), so one
+source feeds the pages, sitemap, RSS and `llms-full.txt`. To add a post, append an entry to `blogPosts`.
+
+Each article is built for search and answer engines: a direct "short answer" up top, key takeaways, question-style
+headings, a visible FAQ, internal links, a sticky table of contents, and BlogPosting, BreadcrumbList and FAQPage
+JSON-LD with published/updated dates.
 
 ## Project structure
 

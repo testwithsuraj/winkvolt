@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { motion, useAnimate, useReducedMotion } from "motion/react";
+import { AnimatePresence, motion, useAnimate, useReducedMotion } from "motion/react";
 
 import { cn } from "@/lib/utils";
 
@@ -108,22 +108,42 @@ export function Logo({
   className,
   wordmarkClassName,
   onDark = false,
+  hideWordmark = false,
 }: {
   className?: string;
   wordmarkClassName?: string;
   onDark?: boolean;
+  /** Collapse the wordmark (it slides back in when this turns false again). */
+  hideWordmark?: boolean;
 }) {
   return (
-    <span className={cn("inline-flex items-center gap-2.5", className)}>
+    <span className={cn("inline-flex items-center", className)}>
       <LogoMark onDark={onDark} />
-      <motion.span
-        className={cn("text-[1.3rem] leading-none font-semibold tracking-[-0.05em]", wordmarkClassName)}
-        initial={{ opacity: 0, x: -6 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8, delay: 0.35, ease }}
-      >
-        winkvolt
-      </motion.span>
+      <AnimatePresence initial={false}>
+        {!hideWordmark && (
+          <motion.span
+            key="wordmark"
+            className="inline-block overflow-hidden"
+            initial={{ width: 0, opacity: 0 }}
+            animate={{ width: "auto", opacity: 1 }}
+            exit={{ width: 0, opacity: 0 }}
+            transition={{ duration: 0.5, ease }}
+          >
+            <motion.span
+              className={cn(
+                "inline-block pl-2.5 text-[1.3rem] leading-none font-semibold tracking-[-0.05em] whitespace-nowrap",
+                wordmarkClassName,
+              )}
+              initial={{ x: "-40%" }}
+              animate={{ x: "0%" }}
+              exit={{ x: "-40%" }}
+              transition={{ duration: 0.55, ease }}
+            >
+              winkvolt
+            </motion.span>
+          </motion.span>
+        )}
+      </AnimatePresence>
     </span>
   );
 }
