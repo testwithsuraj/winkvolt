@@ -5,7 +5,7 @@ import { MotionConfig } from "motion/react";
 import { JsonLd } from "@/components/json-ld";
 import { Footer } from "@/components/sections/footer";
 import { Navbar } from "@/components/sections/navbar";
-import { SmoothScroll } from "@/components/smooth-scroll";
+import { scrollResetScript, SmoothScroll } from "@/components/smooth-scroll";
 import { site } from "@/lib/site";
 import "lenis/dist/lenis.css";
 import "./globals.css";
@@ -98,6 +98,9 @@ const website = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable}`}>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: scrollResetScript }} />
+      </head>
       <body>
         <div id="top" aria-hidden />
         <JsonLd data={organization} />

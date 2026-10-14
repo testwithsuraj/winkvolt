@@ -145,7 +145,6 @@ export function Navbar() {
         const hash = href.slice(1);
         if (lenis) lenis.scrollTo(hash, { duration: 1.4 });
         else document.querySelector(hash)?.scrollIntoView({ behavior: "smooth" });
-        history.replaceState(null, "", hash);
       } else {
         router.push(href);
       }

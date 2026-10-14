@@ -10,10 +10,10 @@ type CounterProps = {
   className?: string;
 };
 
-/** Counts up from zero the first time it scrolls into view. */
-export function Counter({ to, suffix = "", duration = 2, className }: CounterProps) {
+/** Quickly counts up from zero the first time it scrolls into view. */
+export function Counter({ to, suffix = "", duration = 1.1, delay = 0, className }: CounterProps & { delay?: number }) {
   const ref = React.useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "0px 0px -15% 0px" });
+  const inView = useInView(ref, { once: true, margin: "0px 0px -5% 0px" });
   const reduce = useReducedMotion();
 
   React.useEffect(() => {
@@ -23,15 +23,17 @@ export function Counter({ to, suffix = "", duration = 2, className }: CounterPro
       node.textContent = `${to}${suffix}`;
       return;
     }
+    node.textContent = `0${suffix}`;
     const controls = animate(0, to, {
       duration,
-      ease: [0.16, 1, 0.3, 1],
+      delay,
+      ease: [0.22, 1, 0.36, 1],
       onUpdate: (v) => {
         node.textContent = `${Math.round(v)}${suffix}`;
       },
     });
     return () => controls.stop();
-  }, [inView, to, suffix, duration, reduce]);
+  }, [inView, to, suffix, duration, delay, reduce]);
 
   return (
     <span ref={ref} className={className}>

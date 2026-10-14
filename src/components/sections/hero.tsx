@@ -7,6 +7,7 @@ import { HeroScene } from "@/components/svg/hero-scene";
 import { Button } from "@/components/ui/button";
 import { ArrowIcon } from "@/components/ui/arrow-icon";
 import { CalendarIcon } from "@/components/ui/calendar-icon";
+import { Counter } from "@/components/ui/counter";
 import { Magnetic } from "@/components/ui/magnetic";
 import { SplitWords } from "@/components/ui/reveal";
 import { RotatingWord } from "@/components/ui/rotating-word";
@@ -103,11 +104,15 @@ export function Hero() {
           >
             <div className="pr-6">
               <dt className="text-sm text-muted">Lenses built</dt>
-              <dd className="mt-1 text-3xl font-semibold tracking-tight tabular">150+</dd>
+              <dd className="mt-1 text-3xl font-semibold tracking-tight tabular">
+                <Counter to={150} suffix="+" delay={0.7} />
+              </dd>
             </div>
             <div className="px-6">
               <dt className="text-sm text-muted">Total views</dt>
-              <dd className="mt-1 text-3xl font-semibold tracking-tight tabular">500M+</dd>
+              <dd className="mt-1 text-3xl font-semibold tracking-tight tabular">
+                <Counter to={500} suffix="M+" delay={0.8} />
+              </dd>
             </div>
           </motion.dl>
         </div>

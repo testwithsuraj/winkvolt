@@ -42,6 +42,7 @@ export function Stats({ index = "01" }: { index?: string }) {
               <div>
                 <Counter
                   to={stat.value}
+                  delay={i * 0.12}
                   suffix={stat.suffix}
                   className="block text-[clamp(3.25rem,26cqi,10rem)] leading-[0.85] font-semibold tracking-[-0.06em] tabular"
                 />
