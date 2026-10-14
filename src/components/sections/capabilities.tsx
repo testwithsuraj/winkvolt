@@ -4,13 +4,13 @@ import { Reveal } from "@/components/ui/reveal";
 import { SectionLabel } from "@/components/ui/section-label";
 import { capabilities } from "@/lib/site";
 
-export function Capabilities() {
+export function Capabilities({ index = "03" }: { index?: string }) {
   return (
     <section id="capabilities" aria-labelledby="capabilities-title" className="bg-ink py-20 text-paper sm:py-28 lg:py-36">
       <div className="container-x">
         <div className="grid gap-8 lg:grid-cols-12">
           <Reveal className="lg:col-span-4">
-            <SectionLabel index="03" className="text-paper/60">
+            <SectionLabel index={index} className="text-paper/60">
               Capabilities
             </SectionLabel>
           </Reveal>
@@ -19,8 +19,8 @@ export function Capabilities() {
               The tech behind the <span className="font-serif font-normal text-volt italic">wink.</span>
             </h2>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-paper/65">
-              From real-time tracking to live game economies, we bring the full toolkit to every brief, whatever
-              the platform.
+              From real-time tracking to shareable game mechanics, we bring the full Lens Studio toolkit to every
+              brief.
             </p>
           </Reveal>
         </div>

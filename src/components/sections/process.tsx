@@ -8,7 +8,7 @@ import { SectionLabel } from "@/components/ui/section-label";
 import { process } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
-export function Process() {
+export function Process({ index = "04" }: { index?: string }) {
   const listRef = React.useRef<HTMLOListElement>(null);
   const { scrollYProgress } = useScroll({ target: listRef, offset: ["start 55%", "end 55%"] });
   const progress = useSpring(scrollYProgress, { stiffness: 140, damping: 26 });
@@ -19,7 +19,7 @@ export function Process() {
         <div className="lg:col-span-5">
           <div className="lg:sticky lg:top-32">
             <Reveal>
-              <SectionLabel index="04" className="text-muted">
+              <SectionLabel index={index} className="text-muted">
                 How we work
               </SectionLabel>
             </Reveal>

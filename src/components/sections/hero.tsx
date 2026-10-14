@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "motion/react";
 
 import { HeroScene } from "@/components/svg/hero-scene";
@@ -21,7 +22,7 @@ const fadeUp = (delay: number) => ({
 export function Hero() {
   return (
     <section
-      id="top"
+      id="hero"
       className="relative flex flex-col overflow-hidden pt-24 pb-14 sm:pt-28 lg:min-h-[100svh] lg:pt-28 lg:pb-12"
     >
       <div className="container-x grid flex-1 items-center gap-10 lg:grid-cols-12 lg:gap-10 xl:gap-16">
@@ -35,7 +36,7 @@ export function Hero() {
               <span className="size-2 animate-pulse rounded-full bg-volt" />
             </span>
             <span className="font-medium">Creative tech studio</span>
-            <span className="hidden text-muted sm:inline">· AR, games &amp; apps</span>
+            <span className="hidden text-muted sm:inline">· Snapchat Lenses</span>
           </motion.div>
 
           <h1 className="text-hero lg:whitespace-nowrap">
@@ -60,8 +61,8 @@ export function Hero() {
             {...fadeUp(0.45)}
             className="mt-6 max-w-lg text-lg leading-relaxed text-muted sm:text-xl lg:mt-[min(1.5rem,3vh)] lg:max-w-md lg:text-[clamp(1rem,2.3vh,1.2rem)]"
           >
-            WinkVolt designs and builds Snapchat Lenses, Roblox games and mobile apps that people open, play and
-            share, again and again.
+            WinkVolt designs and builds Snapchat Lenses that people open, play and share, again and again. Roblox
+            games and mobile apps are coming soon.
           </motion.p>
 
           <motion.div
@@ -70,9 +71,9 @@ export function Hero() {
           >
             <Magnetic className="w-full sm:w-auto">
               <Button asChild size="lg" className="w-full sm:w-auto">
-                <a href="#contact">
+                <Link href="/contact">
                   Start a project <ArrowIcon />
-                </a>
+                </Link>
               </Button>
             </Magnetic>
             <Button asChild size="lg" variant="outline" className="w-full sm:w-auto">

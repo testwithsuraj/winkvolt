@@ -3,13 +3,13 @@ import { Reveal } from "@/components/ui/reveal";
 import { SectionLabel } from "@/components/ui/section-label";
 import { faqs, site } from "@/lib/site";
 
-export function Faq() {
+export function Faq({ index = "05" }: { index?: string }) {
   return (
     <section id="faq" aria-labelledby="faq-title" className="py-20 sm:py-28 lg:py-36">
       <div className="container-x grid gap-12 lg:grid-cols-12 lg:gap-8">
         <div className="lg:col-span-5">
           <Reveal>
-            <SectionLabel index="05" className="text-muted">
+            <SectionLabel index={index} className="text-muted">
               FAQ
             </SectionLabel>
           </Reveal>

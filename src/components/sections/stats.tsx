@@ -3,13 +3,13 @@ import { Reveal } from "@/components/ui/reveal";
 import { SectionLabel } from "@/components/ui/section-label";
 import { stats } from "@/lib/site";
 
-export function Stats() {
+export function Stats({ index = "01" }: { index?: string }) {
   return (
     <section aria-labelledby="stats-title" className="py-20 sm:py-28 lg:py-36">
       <div className="container-x">
         <div className="grid gap-8 lg:grid-cols-12">
           <Reveal className="lg:col-span-4">
-            <SectionLabel index="01" className="text-muted">
+            <SectionLabel index={index} className="text-muted">
               By the numbers
             </SectionLabel>
           </Reveal>
@@ -20,7 +20,7 @@ export function Stats() {
           </Reveal>
         </div>
 
-        <div className="mt-14 grid gap-px overflow-hidden rounded-[2rem] border border-line bg-line sm:mt-20 md:grid-cols-3">
+        <div className="mt-14 grid gap-px overflow-hidden rounded-[2rem] border border-line bg-line sm:mt-20 md:grid-cols-2">
           {stats.map((stat, i) => (
             <Reveal
               key={stat.label}
@@ -43,7 +43,7 @@ export function Stats() {
                 <Counter
                   to={stat.value}
                   suffix={stat.suffix}
-                  className="block text-[clamp(3.25rem,26cqi,9rem)] leading-[0.85] font-semibold tracking-[-0.06em] tabular"
+                  className="block text-[clamp(3.25rem,26cqi,10rem)] leading-[0.85] font-semibold tracking-[-0.06em] tabular"
                 />
                 <p className="mt-4 text-base text-muted transition-colors duration-500 group-hover:text-paper/70">
                   {stat.note}

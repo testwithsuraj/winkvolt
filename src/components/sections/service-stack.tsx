@@ -1,12 +1,13 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import { motion, useScroll, useTransform, type MotionValue } from "motion/react";
 
 import { ServiceArt } from "@/components/svg/service-art";
 import { ArrowIcon } from "@/components/ui/arrow-icon";
 import { PlayArea } from "@/components/ui/play-area";
-import { services, type ServiceKey } from "@/lib/site";
+import { serviceHref, services, type ServiceKey } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 const theme: Record<ServiceKey, { card: string; panel: string; muted: string; chip: string }> = {
@@ -77,7 +78,14 @@ function StackCard({
             <div>
               <div className="flex items-center justify-between font-mono text-xs tracking-[0.18em] uppercase">
                 <span>{service.index} / 03</span>
-                <span className={cn("hidden sm:inline", c.muted)}>{service.kicker}</span>
+                {service.status === "soon" ? (
+                  <span className="inline-flex items-center gap-2 rounded-full bg-ink px-3 py-1.5 text-[0.7rem] tracking-[0.14em] text-paper">
+                    <span className="size-1.5 animate-pulse rounded-full bg-volt" />
+                    Coming soon
+                  </span>
+                ) : (
+                  <span className={cn("hidden sm:inline", c.muted)}>{service.kicker}</span>
+                )}
               </div>
               <h3 className="mt-4 text-[clamp(2rem,5vw,4.25rem)] leading-[0.95] font-semibold tracking-[-0.045em] sm:mt-8">
                 {service.title}
@@ -97,12 +105,12 @@ function StackCard({
                   </li>
                 ))}
               </ul>
-              <a
-                href="#contact"
+              <Link
+                href={serviceHref(service.slug)}
                 className="group/button mt-5 inline-flex items-center gap-2 text-base font-semibold underline decoration-current/30 decoration-2 underline-offset-[6px] transition-[text-decoration-color] duration-300 hover:decoration-current sm:mt-8"
               >
-                Build with us <ArrowIcon />
-              </a>
+                {service.status === "soon" ? "Get notified" : "Explore lenses"} <ArrowIcon />
+              </Link>
             </div>
           </article>
           <div

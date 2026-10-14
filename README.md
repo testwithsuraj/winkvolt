@@ -1,6 +1,6 @@
 # WinkVolt
 
-Single-page marketing site for **WinkVolt**, a creative technology studio building Snapchat Lenses, Roblox games and mobile apps.
+Marketing site for **WinkVolt**, a creative technology studio building Snapchat Lenses (Roblox games and mobile apps coming soon).
 
 ## Stack
 
@@ -25,30 +25,42 @@ npm run dev        # http://localhost:3000
 | `npm run lint`      | ESLint                           |
 | `npm run typecheck` | TypeScript, no emit              |
 
+## Pages
+
+| Route                         | What it is                                  |
+| ----------------------------- | ------------------------------------------- |
+| `/`                           | Home (hero, services, capabilities, process, FAQ, contact) |
+| `/services/snapchat-lenses`   | Snapchat Lenses service page                |
+| `/services/roblox-games`      | Roblox games, coming soon                   |
+| `/services/mobile-apps`       | Mobile apps, coming soon                    |
+| `/about`                      | About the studio                            |
+| `/contact`                    | Book a call / email, plus FAQ               |
+| `/privacy`, `/terms`          | Legal pages                                 |
+| `/sitemap.xml`, `/robots.txt` | Generated for search engines                |
+| `/llms.txt`, `/llms-full.txt` | Site summary for AI assistants ([llmstxt.org](https://llmstxt.org)) |
+
+Every page has its own title, description, canonical URL and Open Graph tags. The layout adds Organization and
+WebSite JSON-LD, and service pages add Service JSON-LD.
+
 ## Project structure
 
 ```
 src/
-  app/
-    layout.tsx            # fonts, metadata, MotionConfig
-    page.tsx              # composes the sections in order
-    globals.css           # color tokens, utilities, `play:` variant
-    opengraph-image.tsx   # generated social share image
-    icon.svg, robots.ts, sitemap.ts
+  app/                    # routes (see above), layout, metadata files, globals.css
   components/
-    sections/             # one component per page section
-      navbar, hero, marquee, stats, services (+ service-stack), capabilities,
-      process, statement, faq, contact, footer
+    sections/             # one component per section (navbar, hero, services, contact, footer, ...)
     svg/                  # animated logo, hero scene, service & capability illustrations
-    ui/                   # button, accordion, reveal, counter, magnetic, play-area, ...
+    ui/                   # button, accordion, reveal, counter, magnetic, play-area, smart-link, ...
+    smooth-scroll.tsx     # Lenis smooth scrolling
   lib/
     site.ts               # all copy and content (edit text here)
-    utils.ts              # cn() helper
+    pages.ts              # page list for sitemap and llms.txt
+    metadata.ts, llms.ts, utils.ts
 ```
 
 ## Editing content
 
-Copy, stats, services, capabilities, process steps and FAQs all live in `src/lib/site.ts`.
+Copy, stats, services (and whether each is `live` or `soon`), navigation, capabilities, process steps, values and FAQs all live in `src/lib/site.ts`.
 Update `site.url`, `site.email` and `site.bookingUrl` (your Cal.com or Calendly link for the "Book a 15-min call" buttons) there before going live.
 
 ## Design notes
