@@ -23,10 +23,16 @@ export default function OpengraphImage() {
       >
         <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
           <svg width="72" height="72" viewBox="0 0 40 40">
-            <circle cx="20" cy="20" r="20" fill="#dcff3b" />
-            <ellipse cx="14" cy="16" rx="2.6" ry="3.3" fill="#0e0e0c" />
-            <path d="M23 17l3-2.6 3 2.6" fill="none" stroke="#0e0e0c" strokeWidth="2.2" strokeLinecap="round" />
-            <path d="M11.5 24.5l5 3.5 3.5-4 3.5 4 5-3.5" fill="none" stroke="#0e0e0c" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+            <rect width="40" height="40" rx="12" fill="#0e0e0c" />
+            <path
+              d="M9 13.5 14.5 27.5 20 17 25.5 27.5 31 13.5"
+              fill="none"
+              stroke="#dcff3b"
+              strokeWidth="3.6"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <circle cx="31" cy="8" r="2.9" fill="#ff5b2e" />
           </svg>
           <div style={{ fontSize: 44, fontWeight: 700, letterSpacing: -2 }}>winkvolt</div>
         </div>

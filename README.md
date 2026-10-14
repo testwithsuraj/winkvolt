@@ -39,7 +39,7 @@ src/
     sections/             # one component per page section
       navbar, hero, marquee, stats, services (+ service-stack), capabilities,
       process, statement, faq, contact, footer
-    svg/                  # logo, animated hero scene, service & capability illustrations
+    svg/                  # animated logo, hero scene, service & capability illustrations
     ui/                   # button, accordion, reveal, counter, magnetic, play-area, ...
   lib/
     site.ts               # all copy and content (edit text here)
@@ -49,7 +49,7 @@ src/
 ## Editing content
 
 Copy, stats, services, capabilities, process steps and FAQs all live in `src/lib/site.ts`.
-Update `site.url` and `site.email` there before going live.
+Update `site.url`, `site.email` and `site.bookingUrl` (your Cal.com or Calendly link for the "Book a 15-min call" buttons) there before going live.
 
 ## Design notes
 

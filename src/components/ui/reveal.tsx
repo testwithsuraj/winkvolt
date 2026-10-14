@@ -45,7 +45,7 @@ export function SplitWords({ text, className, wordClassName, delay = 0, stagger 
       <span className="sr-only">{text}</span>
       <span aria-hidden>
         {words.map((word, i) => (
-          <span key={`${word}-${i}`} className="inline-block overflow-hidden pb-[0.08em] align-bottom">
+          <span key={`${word}-${i}`} className="inline-block overflow-hidden pb-[0.12em] align-bottom">
             <motion.span
               className={`inline-block ${wordClassName ?? ""}`}
               initial={{ y: "110%" }}

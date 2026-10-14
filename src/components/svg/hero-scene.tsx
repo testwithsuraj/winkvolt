@@ -116,8 +116,8 @@ function LensOverlay({ lens }: { lens: LensKey }) {
 }
 
 /**
- * Hero illustration: a phone running a lens on the WinkVolt face, surrounded by
- * Roblox blocks, live stats and notifications. Lenses cycle on their own, a
+ * Hero illustration: a phone running a lens on the WinkVolt face, with Roblox
+ * blocks and live stats around it. Lenses cycle on their own, a
  * click switches to the next one, and every layer drifts with the pointer.
  */
 export function HeroScene({ className }: { className?: string }) {
@@ -185,7 +185,7 @@ export function HeroScene({ className }: { className?: string }) {
       viewBox="0 0 600 600"
       className={className}
       role="img"
-      aria-label="Animated illustration: a phone running a Snapchat-style lens, Roblox blocks and app notifications. Click to switch lenses."
+      aria-label="Animated illustration: a phone running a Snapchat-style lens next to Roblox blocks. Click to switch lenses."
       onClick={next}
       style={{ cursor: "pointer", touchAction: "manipulation" }}
     >
@@ -207,7 +207,7 @@ export function HeroScene({ className }: { className?: string }) {
 
       {/* roblox blocks */}
       <Layer depth={12} mx={mx} my={my}>
-        <g transform="translate(14 300)">
+        <g transform="translate(40 272)">
           <ellipse cx="102" cy="226" rx="78" ry="12" className="fill-ink/30" />
           <Cube x={34} y={150} />
           <Cube x={102} y={150} />
@@ -219,15 +219,6 @@ export function HeroScene({ className }: { className?: string }) {
             <Cube x={68} y={110} />
           </motion.g>
         </g>
-        <motion.g
-          animate={{ y: [0, -10, 0] }}
-          transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <motion.g animate={{ scaleX: [1, 0.15, 1] }} transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}>
-            <circle cx="62" cy="372" r="18" className="fill-volt stroke-ink" strokeWidth="4" />
-            <path d="M62 363v18" className="stroke-ink" strokeWidth="4" strokeLinecap="round" />
-          </motion.g>
-        </motion.g>
       </Layer>
 
       {/* phone */}
@@ -358,34 +349,8 @@ export function HeroScene({ className }: { className?: string }) {
           </text>
         </motion.g>
 
-        {/* notification that pops in and out */}
-        <motion.g
-          animate={{ y: [24, 0, 0, 24], opacity: [0, 1, 1, 0] }}
-          transition={{ duration: 5.6, times: [0, 0.12, 0.85, 1], repeat: Infinity, repeatDelay: 0.6 }}
-        >
-          <rect x="370" y="398" width="200" height="68" rx="20" className="fill-paper stroke-ink" strokeWidth="3" />
-          <rect x="384" y="412" width="40" height="40" rx="12" className="fill-signal" />
-          <path d="M404 442c-7-6-15-1-11 6l11 10 11-10c4-7-4-12-11-6Z" transform="translate(0 -14)" className="fill-paper" />
-          <text x="436" y="430" className="fill-ink font-sans text-[15px] font-semibold">
-            Your lens is live
-          </text>
-          <rect x="436" y="440" width="96" height="7" rx="3.5" className="fill-line" />
-        </motion.g>
-
-        {[0, 1, 2].map((i) => (
-          <motion.path
-            key={i}
-            d="M520 392c-6-5-13-1-10 5l10 9 10-9c3-6-4-10-10-5Z"
-            className={i === 1 ? "fill-volt stroke-ink" : "fill-signal"}
-            strokeWidth="2"
-            animate={{ y: [0, -90], x: [0, i % 2 ? 14 : -12], opacity: [0, 1, 0], scale: [0.6, 1.1, 0.8] }}
-            transition={{ duration: 2.6, repeat: Infinity, delay: 1 + i * 0.8, ease: "easeOut" }}
-          />
-        ))}
-
         <Sparkle x={520} y={250} s={1.3} className="fill-volt stroke-ink" />
-        <Sparkle x={150} y={110} s={1.1} delay={1.1} />
-        <Sparkle x={470} y={520} s={0.9} delay={0.6} className="fill-signal" />
+        <Sparkle x={150} y={118} s={1.1} delay={1.1} />
       </Layer>
     </svg>
   );

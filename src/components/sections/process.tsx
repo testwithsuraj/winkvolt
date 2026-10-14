@@ -1,16 +1,17 @@
 "use client";
 
 import * as React from "react";
-import { motion, useScroll, useSpring } from "motion/react";
+import { motion, useInView, useScroll, useSpring } from "motion/react";
 
 import { Reveal } from "@/components/ui/reveal";
 import { SectionLabel } from "@/components/ui/section-label";
 import { process } from "@/lib/site";
+import { cn } from "@/lib/utils";
 
 export function Process() {
   const listRef = React.useRef<HTMLOListElement>(null);
-  const { scrollYProgress } = useScroll({ target: listRef, offset: ["start 75%", "end 60%"] });
-  const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 24 });
+  const { scrollYProgress } = useScroll({ target: listRef, offset: ["start 55%", "end 55%"] });
+  const progress = useSpring(scrollYProgress, { stiffness: 140, damping: 26 });
 
   return (
     <section id="process" aria-labelledby="process-title" className="py-20 sm:py-28 lg:py-36">
@@ -35,39 +36,83 @@ export function Process() {
         </div>
 
         <ol ref={listRef} className="relative lg:col-span-7">
-          {/* progress rail */}
-          <div aria-hidden className="absolute top-0 bottom-0 left-[1.375rem] w-px bg-line sm:left-7" />
+          {/* rail + scroll-driven fill */}
+          <div aria-hidden className="absolute top-2 bottom-2 left-[7px] w-0.5 rounded-full bg-line sm:left-[9px]" />
           <motion.div
             aria-hidden
-            className="absolute top-0 bottom-0 left-[1.375rem] w-[3px] -translate-x-px origin-top bg-ink sm:left-7"
+            className="absolute top-2 bottom-2 left-[7px] w-0.5 origin-top rounded-full bg-ink sm:left-[9px]"
             style={{ scaleY: progress }}
           />
 
           {process.map((item, i) => (
-            <li key={item.step} className="relative pb-6 pl-16 last:pb-0 sm:pl-24">
-              <Reveal delay={i * 0.05}>
-                <span
-                  aria-hidden
-                  className="absolute top-6 left-0 grid size-11 place-items-center rounded-full border border-line bg-paper font-mono text-xs font-medium sm:top-8 sm:size-14 sm:text-sm"
-                >
-                  {item.step}
-                </span>
-                <div className="group rounded-[1.75rem] border border-line bg-paper p-6 transition-[background-color,border-color,transform] duration-500 ease-out-expo hover:-translate-y-1 hover:border-ink hover:bg-ink hover:text-paper sm:p-8">
-                  <div className="flex items-baseline justify-between gap-4">
-                    <h3 className="text-2xl font-semibold tracking-tight sm:text-3xl">{item.title}</h3>
-                    <span className="shrink-0 rounded-full bg-paper-2 px-3 py-1 font-mono text-xs text-ink transition-colors duration-500 group-hover:bg-volt">
-                      {item.meta}
-                    </span>
-                  </div>
-                  <p className="mt-3 max-w-lg leading-relaxed text-muted transition-colors duration-500 group-hover:text-paper/70">
-                    {item.body}
-                  </p>
-                </div>
-              </Reveal>
-            </li>
+            <Step key={item.step} item={item} last={i === process.length - 1} />
           ))}
         </ol>
       </div>
     </section>
+  );
+}
+
+function Step({ item, last }: { item: (typeof process)[number]; last: boolean }) {
+  const ref = React.useRef<HTMLLIElement>(null);
+  // A step lights up once its top passes the middle of the viewport, in step with the rail fill.
+  const active = useInView(ref, { margin: "200% 0px -45% 0px" });
+
+  return (
+    <li ref={ref} className={cn("group relative pl-10 sm:pl-16", last ? "pb-0" : "pb-14 sm:pb-20")}>
+      <span
+        aria-hidden
+        className={cn(
+          "absolute top-2 left-0 grid size-4 place-items-center rounded-full border-2 transition-[background-color,border-color,transform] duration-500 ease-out-expo sm:size-5",
+          active ? "scale-110 border-ink bg-volt" : "border-line bg-paper",
+        )}
+      >
+        <span
+          className={cn(
+            "size-1.5 rounded-full bg-ink transition-transform duration-500 ease-out-expo",
+            active ? "scale-100" : "scale-0",
+          )}
+        />
+      </span>
+
+      <Reveal y={20}>
+        <div className="flex items-center gap-3">
+          <span
+            className={cn(
+              "font-mono text-xs tracking-[0.18em] uppercase transition-colors duration-500",
+              active ? "text-ink" : "text-muted",
+            )}
+          >
+            Step {item.step}
+          </span>
+          <span className="h-px w-6 bg-line" aria-hidden />
+          <span
+            className={cn(
+              "rounded-full px-2.5 py-0.5 font-mono text-xs transition-colors duration-500",
+              active ? "bg-ink text-volt" : "bg-paper-2 text-muted",
+            )}
+          >
+            {item.meta}
+          </span>
+        </div>
+
+        <h3
+          className={cn(
+            "mt-4 text-[clamp(2.25rem,6vw,3.75rem)] leading-[0.95] font-semibold tracking-[-0.045em] transition-colors duration-500",
+            active ? "text-ink" : "text-ink/25",
+          )}
+        >
+          {item.title}
+        </h3>
+        <p
+          className={cn(
+            "mt-4 max-w-lg text-base leading-relaxed transition-colors duration-500 sm:text-lg",
+            active ? "text-muted" : "text-muted/50",
+          )}
+        >
+          {item.body}
+        </p>
+      </Reveal>
+    </li>
   );
 }

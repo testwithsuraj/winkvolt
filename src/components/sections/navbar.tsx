@@ -25,10 +25,20 @@ export function Navbar() {
     else lenis.start();
   }, [open, lenis]);
 
+  // Hide on a deliberate scroll down, reveal on any deliberate scroll up.
+  // Small deltas are ignored so smooth-scroll inertia doesn't make it flicker.
+  const travel = React.useRef(0);
   useMotionValueEvent(scrollY, "change", (y) => {
-    const prev = scrollY.getPrevious() ?? 0;
+    const delta = y - (scrollY.getPrevious() ?? y);
     setScrolled(y > 24);
-    setHidden(y > 480 && y > prev && !open);
+    if (y < 160 || open) {
+      travel.current = 0;
+      setHidden(false);
+      return;
+    }
+    travel.current = Math.sign(delta) === Math.sign(travel.current) ? travel.current + delta : delta;
+    if (travel.current > 24) setHidden(true);
+    else if (travel.current < -12) setHidden(false);
   });
 
   const navigate = (href: string) => {
@@ -51,8 +61,13 @@ export function Navbar() {
       />
       <motion.header
         className="fixed inset-x-0 top-0 z-50 pt-3 sm:pt-4"
-        animate={{ y: hidden ? "-120%" : "0%" }}
-        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+        initial={false}
+        animate={hidden ? { y: "-130%", opacity: 0 } : { y: "0%", opacity: 1 }}
+        transition={
+          hidden
+            ? { duration: 0.45, ease: [0.7, 0, 0.84, 0] }
+            : { y: { type: "spring", stiffness: 260, damping: 30, mass: 0.9 }, opacity: { duration: 0.35 } }
+        }
       >
         <div className="container-x">
           <nav
@@ -134,7 +149,7 @@ function MobileMenu({ onNavigate }: { onNavigate: (href: string) => void }) {
         >
           <Dialog.Title className="sr-only">Menu</Dialog.Title>
           <div className="container-x flex h-[4.25rem] items-center justify-between pt-3">
-            <Logo wordmarkClassName="text-paper" />
+            <Logo wordmarkClassName="text-paper" onDark />
             <Dialog.Close
               aria-label="Close menu"
               className="grid size-11 place-items-center rounded-full bg-volt text-ink"

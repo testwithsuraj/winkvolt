@@ -8,7 +8,7 @@ export function Footer() {
       <div className="container-x">
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-6">
-            <LogoMark className="size-12" />
+            <LogoMark className="size-12" onDark />
             <p className="mt-6 max-w-sm text-lg leading-relaxed text-paper/65">
               A creative technology studio building Snapchat Lenses, Roblox games and mobile apps.
             </p>

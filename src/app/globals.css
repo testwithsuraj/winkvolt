@@ -181,7 +181,7 @@
   }
   @media (min-width: 1024px) {
     .text-hero {
-      font-size: clamp(3.25rem, min(5.4vw, 10.5vh), 6rem);
+      font-size: clamp(3rem, min(4.9vw, 9.6vh), 5.5rem);
     }
   }
 }

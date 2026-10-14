@@ -2,6 +2,8 @@ export const site = {
   name: "WinkVolt",
   url: "https://winkvolt.com",
   email: "info@winkvolt.com",
+  /** Scheduling page for the "Book a 15-min call" buttons. Replace with your Cal.com / Calendly link. */
+  bookingUrl: "https://cal.com/winkvolt/15min",
   tagline: "We build things people play with.",
   description:
     "WinkVolt is a creative technology studio building Snapchat Lenses, Roblox games and mobile apps. 150+ lenses shipped and 500M+ total views.",
