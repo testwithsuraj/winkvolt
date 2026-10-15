@@ -293,7 +293,7 @@ function MobileMenu({ onNavigate }: { onNavigate: (href: string) => void }) {
                     <motion.a
                       href={item.href}
                       onClick={go(item.href)}
-                      className="flex items-baseline gap-4 py-1.5 text-[clamp(2.25rem,11vw,4rem)] leading-none font-semibold tracking-[-0.04em] active:text-volt"
+                      className="flex items-baseline gap-4 py-1.5 type-h2 active:text-volt"
                       {...enter(i)}
                     >
                       <span className="font-mono text-sm tracking-normal text-paper/50">0{i + 1}</span>

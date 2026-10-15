@@ -61,14 +61,14 @@ export function PostCard({ post, featured = false }: { post: BlogPost; featured?
         <h3
           className={cn(
             "mt-3 font-semibold tracking-tight text-balance",
-            featured ? "text-[clamp(1.75rem,3.2vw,2.75rem)] leading-[1.05] tracking-[-0.03em]" : "text-xl leading-snug sm:text-2xl",
+            featured ? "type-h2" : "type-h3",
           )}
         >
           <Link href={postHref(post.slug)} className="outline-none after:absolute after:inset-0 after:rounded-[2rem]">
             {post.title}
           </Link>
         </h3>
-        <p className={cn("mt-3 text-muted", featured ? "text-lg leading-relaxed" : "line-clamp-3")}>{post.description}</p>
+        <p className={cn("mt-3 text-muted", featured ? "type-lead" : "line-clamp-3 type-body")}>{post.description}</p>
         <div className="mt-auto flex flex-wrap items-center justify-between gap-3 pt-6">
           <ul className="flex flex-wrap gap-1.5">
             {post.tags.slice(0, featured ? 3 : 2).map((tag) => (

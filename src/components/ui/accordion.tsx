@@ -25,7 +25,7 @@ function AccordionTrigger({
       <AccordionPrimitive.Trigger
         data-slot="accordion-trigger"
         className={cn(
-          "group/trigger flex flex-1 items-center justify-between gap-6 py-6 text-left text-lg font-medium tracking-tight transition-colors outline-none sm:text-xl md:py-7 md:text-2xl",
+          "group/trigger flex flex-1 items-center justify-between gap-6 py-6 text-left text-lg font-medium tracking-tight transition-colors outline-none md:py-7",
           className,
         )}
         {...props}
@@ -68,7 +68,7 @@ function AccordionContent({
     >
       <div
         className={cn(
-          "max-w-2xl pb-7 text-base leading-relaxed text-muted md:text-lg",
+          "max-w-2xl pb-7 type-body text-muted",
           "group-data-[state=closed]/content:animate-[accordion-fade-out_300ms_ease-out_both] group-data-[state=open]/content:animate-[accordion-fade-in_600ms_cubic-bezier(0.16,1,0.3,1)_120ms_both]",
           className,
         )}

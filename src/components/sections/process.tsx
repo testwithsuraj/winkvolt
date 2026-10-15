@@ -24,10 +24,10 @@ export function Process({ index = "04" }: { index?: string }) {
               </SectionLabel>
             </Reveal>
             <Reveal delay={0.08}>
-              <h2 id="process-title" className="text-heading mt-8">
+              <h2 id="process-title" className="type-h2 mt-8">
                 From spark to <span className="font-serif font-normal italic">launch.</span>
               </h2>
-              <p className="mt-6 max-w-md text-lg leading-relaxed text-muted">
+              <p className="mt-6 max-w-md type-lead text-muted">
                 A tight, playable-first process. You see real builds early and often, so there are no surprises on
                 launch day.
               </p>
@@ -98,7 +98,7 @@ function Step({ item, last }: { item: (typeof process)[number]; last: boolean })
 
         <h3
           className={cn(
-            "mt-4 text-[clamp(2.25rem,6vw,3.75rem)] leading-[0.95] font-semibold tracking-[-0.045em] transition-colors duration-500",
+            "mt-4 type-h3 transition-colors duration-500",
             active ? "text-ink" : "text-ink/25",
           )}
         >
@@ -106,7 +106,7 @@ function Step({ item, last }: { item: (typeof process)[number]; last: boolean })
         </h3>
         <p
           className={cn(
-            "mt-4 max-w-lg text-base leading-relaxed transition-colors duration-500 sm:text-lg",
+            "mt-4 max-w-lg type-body transition-colors duration-500",
             active ? "text-muted" : "text-muted/50",
           )}
         >

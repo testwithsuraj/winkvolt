@@ -14,10 +14,10 @@ export function Faq({ index = "05" }: { index?: string }) {
             </SectionLabel>
           </Reveal>
           <Reveal delay={0.08}>
-            <h2 id="faq-title" className="text-heading mt-8">
+            <h2 id="faq-title" className="type-h2 mt-8">
               Good <span className="font-serif font-normal italic">questions.</span>
             </h2>
-            <p className="mt-6 max-w-sm text-lg leading-relaxed text-muted">
+            <p className="mt-6 max-w-sm type-lead text-muted">
               Something else on your mind?{" "}
               <a
                 href={`mailto:${site.email}`}

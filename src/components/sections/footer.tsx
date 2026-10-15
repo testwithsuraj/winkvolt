@@ -26,7 +26,7 @@ export function Footer() {
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-12">
           <div className="sm:col-span-2 lg:col-span-5">
             <LogoMark className="size-12" onDark />
-            <p className="mt-6 max-w-sm text-lg leading-relaxed text-paper/65">
+            <p className="mt-6 max-w-sm type-body text-paper/65">
               A creative technology studio building Snapchat Lenses people play and share. Roblox games and mobile
               apps coming soon.
             </p>

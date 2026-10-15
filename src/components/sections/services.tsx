@@ -13,7 +13,7 @@ export function Services({ index = "02" }: { index?: string }) {
             </SectionLabel>
           </Reveal>
           <Reveal delay={0.08} className="lg:col-span-8">
-            <h2 id="services-title" className="text-heading max-w-3xl">
+            <h2 id="services-title" className="type-h2 max-w-3xl">
               Lenses today. Worlds and apps <span className="font-serif font-normal italic">next.</span>
             </h2>
           </Reveal>

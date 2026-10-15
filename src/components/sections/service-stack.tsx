@@ -87,10 +87,10 @@ function StackCard({
                   <span className={cn("hidden sm:inline", c.muted)}>{service.kicker}</span>
                 )}
               </div>
-              <h3 className="mt-4 text-[clamp(2rem,5vw,4.25rem)] leading-[0.95] font-semibold tracking-[-0.045em] sm:mt-8">
+              <h3 className="mt-4 type-h3 sm:mt-8">
                 {service.title}
               </h3>
-              <p className={cn("mt-3 max-w-md text-[0.95rem] leading-relaxed sm:mt-5 sm:text-lg", c.muted)}>
+              <p className={cn("mt-3 max-w-md type-body sm:mt-5", c.muted)}>
                 {service.body}
               </p>
             </div>

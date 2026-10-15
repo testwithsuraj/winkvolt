@@ -18,7 +18,7 @@ export function Contact({ index = "06" }: { index?: string }) {
             </SectionLabel>
           </Reveal>
 
-          <h2 id="contact-title" className="text-display mt-8 text-[clamp(2.75rem,5.2vw,5.75rem)]">
+          <h2 id="contact-title" className="type-h2 mt-8">
             <SplitWords text="Got an idea?" className="block" />
             <span className="block">
               <SplitWords text="Let's make it" delay={0.15} />{" "}
@@ -27,7 +27,7 @@ export function Contact({ index = "06" }: { index?: string }) {
           </h2>
 
           <Reveal delay={0.15}>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink/75 sm:text-xl">
+            <p className="mt-6 max-w-xl type-lead text-ink/75">
               Grab 15 minutes with us or send an email. We&apos;ll take it from there.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">

@@ -26,7 +26,7 @@ export function PageHero({ eyebrow, title, accent, description, actions, aside, 
               {eyebrow}
             </div>
           </Reveal>
-          <h1 className="text-heading mt-7 text-[clamp(2.6rem,7vw,6rem)]">
+          <h1 className="type-h1 mt-7">
             <SplitWords text={title} />
             {accent && (
               <>
@@ -36,7 +36,7 @@ export function PageHero({ eyebrow, title, accent, description, actions, aside, 
             )}
           </h1>
           <Reveal delay={0.2}>
-            <p className="mt-7 max-w-xl text-lg leading-relaxed text-muted sm:text-xl">{description}</p>
+            <p className="mt-7 max-w-xl type-lead text-muted">{description}</p>
           </Reveal>
           {actions && (
             <Reveal delay={0.3}>

@@ -72,7 +72,7 @@ function BlockView({ block }: { block: Block }) {
       );
     case "quote":
       return (
-        <blockquote className="border-l-4 border-volt pl-5 text-xl text-ink italic">
+        <blockquote className="border-l-4 border-volt pl-5 type-lead text-ink italic">
           <RichText text={block.text} />
         </blockquote>
       );
@@ -202,10 +202,10 @@ export default async function PostPage({ params }: Props) {
               <Badge className="bg-volt text-ink">{readingMinutes(post)} min read</Badge>
             </Reveal>
             <Reveal delay={0.1}>
-              <h1 className="mt-6 text-[clamp(2.25rem,5.5vw,4.75rem)] leading-[1] font-semibold tracking-[-0.045em] text-balance">
+              <h1 className="mt-6 type-h1 text-balance">
                 {post.title}
               </h1>
-              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">{post.description}</p>
+              <p className="mt-6 max-w-2xl type-lead text-muted">{post.description}</p>
             </Reveal>
             <Reveal delay={0.15} className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-line pt-5 text-sm text-muted">
               <span>
@@ -241,7 +241,7 @@ export default async function PostPage({ params }: Props) {
               <h2 id="short-answer-title" className="font-mono text-xs tracking-[0.18em] uppercase">
                 The short answer
               </h2>
-              <p className="mt-4 text-lg leading-relaxed font-medium sm:text-xl">{post.answer}</p>
+              <p className="mt-4 type-lead font-medium">{post.answer}</p>
             </section>
 
             <section aria-labelledby="takeaways-title" className="mt-6 rounded-[1.75rem] border border-line p-6 sm:p-8">
@@ -250,7 +250,7 @@ export default async function PostPage({ params }: Props) {
               </h2>
               <ul className="mt-4 space-y-3">
                 {post.takeaways.map((t) => (
-                  <li key={t} className="flex gap-3 text-base leading-relaxed">
+                  <li key={t} className="flex gap-3 type-body">
                     <svg viewBox="0 0 16 16" aria-hidden className="mt-1 size-4 shrink-0">
                       <circle cx="8" cy="8" r="8" className="fill-ink" />
                       <path d="M4.5 8.2 7 10.5l4.5-5" fill="none" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="stroke-volt" />
@@ -261,12 +261,12 @@ export default async function PostPage({ params }: Props) {
               </ul>
             </section>
 
-            <div className="mt-14 space-y-14 text-[1.075rem] leading-[1.8] text-muted sm:text-lg">
+            <div className="mt-14 space-y-14 type-body text-muted">
               {post.sections.map((s) => (
                 <section key={s.id} id={s.id} aria-labelledby={`${s.id}-title`} className="scroll-mt-28">
                   <h2
                     id={`${s.id}-title`}
-                    className="text-[clamp(1.6rem,3vw,2.25rem)] leading-tight font-semibold tracking-[-0.03em] text-ink"
+                    className="type-h2 text-ink"
                   >
                     {s.heading}
                   </h2>
@@ -280,13 +280,13 @@ export default async function PostPage({ params }: Props) {
 
               {post.faqs.length > 0 && (
                 <section id="faq" aria-labelledby="faq-title" className="scroll-mt-28">
-                  <h2 id="faq-title" className="text-[clamp(1.6rem,3vw,2.25rem)] leading-tight font-semibold tracking-[-0.03em] text-ink">
+                  <h2 id="faq-title" className="type-h2 text-ink">
                     Frequently asked questions
                   </h2>
                   <dl className="mt-6 divide-y divide-line border-y border-line">
                     {post.faqs.map((f) => (
                       <div key={f.q} className="py-6">
-                        <dt className="text-xl font-semibold tracking-tight text-ink">{f.q}</dt>
+                        <dt className="type-h4 text-ink">{f.q}</dt>
                         <dd className="mt-2">{f.a}</dd>
                       </div>
                     ))}
@@ -306,7 +306,7 @@ export default async function PostPage({ params }: Props) {
             <aside className="mt-12 flex flex-col gap-6 rounded-[2rem] bg-ink p-7 text-paper sm:p-9">
               <div>
                 <p className="font-mono text-xs tracking-[0.18em] text-paper/50 uppercase">Planning a lens?</p>
-                <p className="mt-3 text-[clamp(1.6rem,3vw,2.25rem)] leading-tight font-semibold tracking-[-0.03em]">
+                <p className="mt-3 type-h3">
                   Let&apos;s make it <span className="font-serif font-normal text-volt italic">wink.</span>
                 </p>
               </div>
@@ -330,7 +330,7 @@ export default async function PostPage({ params }: Props) {
       <section aria-labelledby="related-title" className="border-t border-line py-20 sm:py-28">
         <div className="container-x">
           <div className="flex items-end justify-between gap-6">
-            <h2 id="related-title" className="text-heading text-[clamp(2rem,4.5vw,3.75rem)]">
+            <h2 id="related-title" className="type-h2">
               Keep <span className="font-serif font-normal italic">reading.</span>
             </h2>
             <Link href="/blog" className="group/button hidden items-center gap-2 font-semibold sm:inline-flex">

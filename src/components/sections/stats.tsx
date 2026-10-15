@@ -14,7 +14,7 @@ export function Stats({ index = "01" }: { index?: string }) {
             </SectionLabel>
           </Reveal>
           <Reveal delay={0.08} className="lg:col-span-8">
-            <h2 id="stats-title" className="text-heading max-w-3xl">
+            <h2 id="stats-title" className="type-h2 max-w-3xl">
               Built for reach. Measured in <span className="font-serif font-normal italic">millions.</span>
             </h2>
           </Reveal>
@@ -25,7 +25,7 @@ export function Stats({ index = "01" }: { index?: string }) {
             <Reveal
               key={stat.label}
               delay={i * 0.1}
-              className="group @container relative flex min-h-60 flex-col justify-between overflow-hidden bg-paper p-7 transition-colors duration-500 hover:bg-ink hover:text-paper sm:min-h-72 sm:p-9"
+              className="group @container relative flex min-h-52 flex-col justify-between gap-10 overflow-hidden bg-paper p-7 transition-colors duration-500 hover:bg-ink hover:text-paper sm:p-9"
             >
               <div className="flex items-center justify-between">
                 <span className="font-mono text-xs tracking-[0.18em] text-muted uppercase transition-colors duration-500 group-hover:text-paper/60">
@@ -44,7 +44,7 @@ export function Stats({ index = "01" }: { index?: string }) {
                   to={stat.value}
                   delay={i * 0.12}
                   suffix={stat.suffix}
-                  className="block text-[clamp(3.25rem,26cqi,10rem)] leading-[0.85] font-semibold tracking-[-0.06em] tabular"
+                  className="block type-h1 tabular"
                 />
                 <p className="mt-4 text-base text-muted transition-colors duration-500 group-hover:text-paper/70">
                   {stat.note}

@@ -13,7 +13,7 @@ export function Values({ index = "02" }: { index?: string }) {
             </SectionLabel>
           </Reveal>
           <Reveal delay={0.08} className="lg:col-span-8">
-            <h2 id="values-title" className="text-heading max-w-3xl">
+            <h2 id="values-title" className="type-h2 max-w-3xl">
               Four rules we <span className="font-serif font-normal text-volt italic">play by.</span>
             </h2>
           </Reveal>
@@ -29,7 +29,7 @@ export function Values({ index = "02" }: { index?: string }) {
                   0{i + 1}
                 </span>
                 <div>
-                  <h3 className="text-3xl font-semibold tracking-tight">{v.title}</h3>
+                  <h3 className="type-h3">{v.title}</h3>
                   <p className="mt-3 max-w-md text-paper/65">{v.body}</p>
                 </div>
               </Reveal>

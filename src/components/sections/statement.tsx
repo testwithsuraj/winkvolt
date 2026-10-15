@@ -29,7 +29,7 @@ export function Statement() {
       <div className="container-x">
         <p
           ref={ref}
-          className="max-w-6xl text-[clamp(1.9rem,5.2vw,4.75rem)] leading-[1.08] font-semibold tracking-[-0.035em]"
+          className="max-w-4xl type-h2"
         >
           <span className="sr-only">{text}</span>
           <span aria-hidden>

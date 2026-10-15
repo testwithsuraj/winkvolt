@@ -27,13 +27,13 @@ export function BlogIndex({ eyebrow, title, accent, description, posts, activeCa
             <Reveal>
               <p className="font-mono text-xs tracking-[0.18em] text-muted uppercase">{eyebrow}</p>
             </Reveal>
-            <h1 className="text-heading mt-6 text-[clamp(2.6rem,7vw,6rem)]">
+            <h1 className="type-h1 mt-6">
               <SplitWords text={title} />{" "}
               <SplitWords text={accent} delay={0.2} wordClassName="font-serif font-normal italic" />
             </h1>
           </div>
           <Reveal delay={0.15} className="lg:col-span-4">
-            <p className="max-w-md text-lg leading-relaxed text-muted">{description}</p>
+            <p className="max-w-md type-lead text-muted">{description}</p>
           </Reveal>
         </div>
 
@@ -59,7 +59,7 @@ export function BlogIndex({ eyebrow, title, accent, description, posts, activeCa
           </ul>
         )}
 
-        {posts.length === 0 && <p className="mt-12 text-lg text-muted">No posts here yet. Check back soon.</p>}
+        {posts.length === 0 && <p className="mt-12 type-lead text-muted">No posts here yet. Check back soon.</p>}
       </div>
     </section>
   );

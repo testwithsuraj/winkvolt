@@ -41,7 +41,7 @@ export function LensTypes({ index = "02" }: { index?: string }) {
             </SectionLabel>
           </Reveal>
           <Reveal delay={0.08} className="lg:col-span-8">
-            <h2 id="lens-types-title" className="text-heading max-w-3xl">
+            <h2 id="lens-types-title" className="type-h2 max-w-3xl">
               Every kind of lens, <span className="font-serif font-normal italic">one studio.</span>
             </h2>
           </Reveal>
@@ -62,7 +62,7 @@ export function LensTypes({ index = "02" }: { index?: string }) {
                     <span className="font-mono text-xs text-muted tabular">0{i + 1}</span>
                   </div>
                   <div>
-                    <h3 className="text-3xl font-semibold tracking-tight">{type.title}</h3>
+                    <h3 className="type-h3">{type.title}</h3>
                     <p className="mt-3 max-w-md text-muted">{type.body}</p>
                     <ul className="mt-6 flex flex-wrap gap-2">
                       {type.points.map((p) => (

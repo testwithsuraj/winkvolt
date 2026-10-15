@@ -10,18 +10,18 @@ export function LegalPage({ title, updated, intro, sections }: { title: string; 
           <div className="lg:sticky lg:top-32">
             <Reveal>
               <p className="font-mono text-xs tracking-[0.18em] text-muted uppercase">Legal · Updated {updated}</p>
-              <h1 className="text-heading mt-6">{title}</h1>
+              <h1 className="type-h1 mt-6">{title}</h1>
             </Reveal>
           </div>
         </div>
         <Reveal delay={0.1} className="lg:col-span-8">
-          <div className="max-w-2xl text-lg leading-relaxed text-muted">{intro}</div>
+          <div className="max-w-2xl type-lead text-muted">{intro}</div>
           <ol className="mt-12 space-y-10 border-t border-line pt-10">
             {sections.map((s, i) => (
               <li key={s.heading} className="grid gap-3 sm:grid-cols-[3rem_1fr]">
                 <span className="font-mono text-sm text-muted tabular">0{i + 1}</span>
                 <div>
-                  <h2 className="text-2xl font-semibold tracking-tight">{s.heading}</h2>
+                  <h2 className="type-h2">{s.heading}</h2>
                   <div className="mt-3 max-w-2xl space-y-3 leading-relaxed text-muted">{s.body}</div>
                 </div>
               </li>

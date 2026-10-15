@@ -10,10 +10,10 @@ export default function NotFound() {
       <div className="container-x flex flex-col items-center text-center">
         <LogoMark className="size-20" interval={2500} />
         <p className="mt-10 font-mono text-xs tracking-[0.18em] text-muted uppercase">Error 404</p>
-        <h1 className="text-heading mt-4">
+        <h1 className="type-h1 mt-4">
           This page <span className="font-serif font-normal italic">winked out.</span>
         </h1>
-        <p className="mt-5 max-w-md text-lg text-muted">
+        <p className="mt-5 max-w-md type-lead text-muted">
           The page you&apos;re looking for doesn&apos;t exist or has moved.
         </p>
         <Button asChild size="lg" className="mt-9">

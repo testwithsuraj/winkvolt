@@ -15,10 +15,10 @@ export function Capabilities({ index = "03" }: { index?: string }) {
             </SectionLabel>
           </Reveal>
           <Reveal delay={0.08} className="lg:col-span-8">
-            <h2 id="capabilities-title" className="text-heading max-w-3xl">
+            <h2 id="capabilities-title" className="type-h2 max-w-3xl">
               The tech behind the <span className="font-serif font-normal text-volt italic">wink.</span>
             </h2>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-paper/65">
+            <p className="mt-6 max-w-xl type-lead text-paper/65">
               From real-time tracking to shareable game mechanics, we bring the full Lens Studio toolkit to every
               brief.
             </p>
@@ -38,7 +38,7 @@ export function Capabilities({ index = "03" }: { index?: string }) {
                     <span className="font-mono text-xs text-paper/40 tabular">0{i + 1}</span>
                   </div>
                   <div>
-                    <h3 className="text-2xl font-semibold tracking-tight">{cap.title}</h3>
+                    <h3 className="type-h3">{cap.title}</h3>
                     <p className="mt-2 text-paper/60">{cap.body}</p>
                   </div>
                 </PlayArea>

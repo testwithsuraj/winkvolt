@@ -22,7 +22,7 @@ export function ComingSoon({ service }: { service: Service }) {
             </SectionLabel>
           </Reveal>
           <Reveal delay={0.08} className="lg:col-span-8">
-            <h2 id="planned-title" className="text-heading max-w-3xl">
+            <h2 id="planned-title" className="type-h2 max-w-3xl">
               What we&apos;ll build <span className="font-serif font-normal italic">first.</span>
             </h2>
           </Reveal>
@@ -33,7 +33,7 @@ export function ComingSoon({ service }: { service: Service }) {
             <li key={point} className="bg-paper">
               <Reveal delay={(i % 2) * 0.08} className="flex h-full items-center gap-5 p-7 sm:p-9">
                 <span className="font-mono text-xs text-muted tabular">0{i + 1}</span>
-                <span className="text-2xl font-semibold tracking-tight">{point}</span>
+                <span className="type-h3">{point}</span>
               </Reveal>
             </li>
           ))}
@@ -50,7 +50,7 @@ export function ComingSoon({ service }: { service: Service }) {
               </span>
               <div>
                 <p className="font-mono text-xs tracking-[0.18em] text-paper/50 uppercase">Available now</p>
-                <p className="mt-1 text-2xl font-semibold tracking-tight">{live.title}</p>
+                <p className="mt-1 type-h3">{live.title}</p>
               </div>
             </div>
             <span className="inline-flex items-center gap-2 font-medium text-volt">
