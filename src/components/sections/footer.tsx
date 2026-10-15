@@ -30,7 +30,7 @@ export function Footer() {
               A creative technology studio building Snapchat Lenses people play and share. Roblox games and mobile
               apps coming soon.
             </p>
-            <a href={`mailto:${site.email}`} className="mt-6 inline-block text-lg text-paper transition-colors hover:text-volt">
+            <a href={`mailto:${site.email}`} className="mt-6 inline-block text-base text-paper transition-colors hover:text-volt">
               {site.email}
             </a>
           </div>
@@ -101,7 +101,7 @@ export function Footer() {
 
       <p
         aria-hidden
-        className="-mb-[0.1em] flex justify-center text-[23vw] leading-[0.95] font-semibold tracking-[-0.07em] select-none"
+        className="-mb-[0.1em] flex justify-center text-[clamp(4rem,14vw,12rem)] leading-[0.95] font-semibold tracking-[-0.07em] select-none"
       >
         {"winkvolt".split("").map((letter, i) => (
           <span

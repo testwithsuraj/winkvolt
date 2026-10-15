@@ -5,7 +5,7 @@ import { stats } from "@/lib/site";
 
 export function Stats({ index = "01" }: { index?: string }) {
   return (
-    <section aria-labelledby="stats-title" className="py-20 sm:py-28 lg:py-36">
+    <section aria-labelledby="stats-title" className="py-16 sm:py-20 lg:py-24">
       <div className="container-x">
         <div className="grid gap-8 lg:grid-cols-12">
           <Reveal className="lg:col-span-4">
@@ -20,12 +20,12 @@ export function Stats({ index = "01" }: { index?: string }) {
           </Reveal>
         </div>
 
-        <div className="mt-14 grid gap-px overflow-hidden rounded-[2rem] border border-line bg-line sm:mt-20 md:grid-cols-2">
+        <div className="mt-10 grid gap-px overflow-hidden rounded-[2rem] border border-line bg-line sm:mt-12 md:grid-cols-2">
           {stats.map((stat, i) => (
             <Reveal
               key={stat.label}
               delay={i * 0.1}
-              className="group @container relative flex min-h-52 flex-col justify-between gap-10 overflow-hidden bg-paper p-7 transition-colors duration-500 hover:bg-ink hover:text-paper sm:p-9"
+              className="group @container relative flex min-h-44 flex-col justify-between gap-10 overflow-hidden bg-paper p-7 transition-colors duration-500 hover:bg-ink hover:text-paper sm:p-9"
             >
               <div className="flex items-center justify-between">
                 <span className="font-mono text-xs tracking-[0.18em] text-muted uppercase transition-colors duration-500 group-hover:text-paper/60">

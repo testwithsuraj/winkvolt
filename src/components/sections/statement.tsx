@@ -25,7 +25,7 @@ export function Statement() {
   const words = text.split(" ");
 
   return (
-    <section aria-label="Our approach" className="bg-ink py-24 text-paper sm:py-32 lg:py-44">
+    <section aria-label="Our approach" className="bg-ink py-16 text-paper sm:py-20 lg:py-28">
       <div className="container-x">
         <p
           ref={ref}

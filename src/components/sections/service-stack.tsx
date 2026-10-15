@@ -25,7 +25,7 @@ export function ServiceStack() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
 
   return (
-    <div ref={ref} className="mt-14 sm:mt-20">
+    <div ref={ref} className="mt-10 sm:mt-12">
       {services.map((service, i) => (
         <StackCard
           key={service.key}

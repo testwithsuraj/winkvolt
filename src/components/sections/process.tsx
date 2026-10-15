@@ -14,7 +14,7 @@ export function Process({ index = "04" }: { index?: string }) {
   const progress = useSpring(scrollYProgress, { stiffness: 140, damping: 26 });
 
   return (
-    <section id="process" aria-labelledby="process-title" className="py-20 sm:py-28 lg:py-36">
+    <section id="process" aria-labelledby="process-title" className="py-16 sm:py-20 lg:py-24">
       <div className="container-x grid gap-12 lg:grid-cols-12 lg:gap-8">
         <div className="lg:col-span-5">
           <div className="lg:sticky lg:top-32">

@@ -104,13 +104,13 @@ export function Hero() {
           >
             <div className="pr-6">
               <dt className="text-sm text-muted">Lenses built</dt>
-              <dd className="mt-1 text-2xl font-semibold tracking-tight tabular">
+              <dd className="mt-1 text-xl font-semibold tracking-tight tabular">
                 <Counter to={150} suffix="+" delay={0.7} />
               </dd>
             </div>
             <div className="px-6">
               <dt className="text-sm text-muted">Total views</dt>
-              <dd className="mt-1 text-2xl font-semibold tracking-tight tabular">
+              <dd className="mt-1 text-xl font-semibold tracking-tight tabular">
                 <Counter to={500} suffix="M+" delay={0.8} />
               </dd>
             </div>

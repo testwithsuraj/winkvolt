@@ -313,7 +313,7 @@ function MobileMenu({ onNavigate }: { onNavigate: (href: string) => void }) {
                           <a
                             href={serviceHref(s.slug)}
                             onClick={go(serviceHref(s.slug))}
-                            className="flex items-center gap-2 py-1.5 text-lg text-paper/80 active:text-volt"
+                            className="flex items-center gap-2 py-1.5 text-base text-paper/80 active:text-volt"
                           >
                             {s.title}
                             {s.status === "soon" && <SoonBadge className="bg-paper/10 text-paper/60" />}

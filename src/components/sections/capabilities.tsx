@@ -25,7 +25,7 @@ export function Capabilities({ index = "03" }: { index?: string }) {
           </Reveal>
         </div>
 
-        <ul className="mt-14 grid gap-px overflow-hidden rounded-[2rem] border border-paper/10 bg-paper/10 sm:mt-20 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-10 grid gap-px overflow-hidden rounded-[2rem] border border-paper/10 bg-paper/10 sm:mt-12 sm:grid-cols-2 lg:grid-cols-3">
           {capabilities.map((cap, i) => (
             <li key={cap.key} className="bg-ink">
               <Reveal delay={(i % 3) * 0.08} className="h-full">
