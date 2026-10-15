@@ -229,7 +229,7 @@ export default async function PostPage({ params }: Props) {
           </Reveal>
         </header>
 
-        <div className="container-x mt-10 grid gap-12 lg:mt-20 lg:grid-cols-12 lg:gap-8">
+        <div className="container-x mt-12 grid gap-12 lg:mt-16 lg:grid-cols-12 lg:gap-8">
           <aside className="hidden lg:col-span-3 lg:block">
             <div className="sticky top-28">
               <Toc items={toc} />
@@ -261,12 +261,12 @@ export default async function PostPage({ params }: Props) {
               </ul>
             </section>
 
-            <div className="mt-12 space-y-10 type-body text-muted">
+            <div className="mt-14 space-y-12 type-body text-muted">
               {post.sections.map((s) => (
                 <section key={s.id} id={s.id} aria-labelledby={`${s.id}-title`} className="scroll-mt-28">
                   <h2
                     id={`${s.id}-title`}
-                    className="type-h2 text-ink"
+                    className="type-title text-ink"
                   >
                     {s.heading}
                   </h2>
@@ -280,7 +280,7 @@ export default async function PostPage({ params }: Props) {
 
               {post.faqs.length > 0 && (
                 <section id="faq" aria-labelledby="faq-title" className="scroll-mt-28">
-                  <h2 id="faq-title" className="type-h2 text-ink">
+                  <h2 id="faq-title" className="type-title text-ink">
                     Frequently asked questions
                   </h2>
                   <dl className="mt-6 divide-y divide-line border-y border-line">
@@ -306,7 +306,7 @@ export default async function PostPage({ params }: Props) {
             <aside className="mt-12 flex flex-col gap-6 rounded-[2rem] bg-ink p-7 text-paper sm:p-9">
               <div>
                 <p className="font-mono text-xs tracking-[0.18em] text-paper/50 uppercase">Planning a lens?</p>
-                <p className="mt-3 type-h3">
+                <p className="mt-3 type-title">
                   Let&apos;s make it <span className="font-serif font-normal text-volt italic">wink.</span>
                 </p>
               </div>
@@ -327,7 +327,7 @@ export default async function PostPage({ params }: Props) {
         </div>
       </article>
 
-      <section aria-labelledby="related-title" className="border-t border-line py-16 sm:py-20">
+      <section aria-labelledby="related-title" className="border-t border-line py-20 sm:py-24">
         <div className="container-x">
           <div className="flex items-end justify-between gap-6">
             <h2 id="related-title" className="type-h2">
@@ -337,7 +337,7 @@ export default async function PostPage({ params }: Props) {
               All posts <ArrowIcon />
             </Link>
           </div>
-          <ul className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {relatedPosts(post).map((p) => (
               <li key={p.slug}>
                 <PostCard post={p} />

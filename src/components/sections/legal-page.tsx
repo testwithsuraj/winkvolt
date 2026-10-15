@@ -21,7 +21,7 @@ export function LegalPage({ title, updated, intro, sections }: { title: string; 
               <li key={s.heading} className="grid gap-3 sm:grid-cols-[3rem_1fr]">
                 <span className="font-mono text-sm text-muted tabular">0{i + 1}</span>
                 <div>
-                  <h2 className="type-h2">{s.heading}</h2>
+                  <h2 className="type-title">{s.heading}</h2>
                   <div className="mt-3 max-w-2xl space-y-3 leading-relaxed text-muted">{s.body}</div>
                 </div>
               </li>

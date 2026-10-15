@@ -17,7 +17,7 @@ export function Marquee() {
           <li
             key={`${item}-${i}`}
             aria-hidden={i >= marqueeItems.length}
-            className="flex items-center gap-6 pr-6 text-lg font-medium tracking-tight whitespace-nowrap sm:gap-8 sm:pr-8 sm:text-xl"
+            className="flex items-center gap-6 pr-6 text-2xl font-medium tracking-tight whitespace-nowrap sm:gap-10 sm:pr-10 sm:text-3xl"
           >
             <span className="transition-colors duration-300 hover:text-volt">{item}</span>
             <Spark />

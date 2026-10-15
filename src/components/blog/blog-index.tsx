@@ -27,7 +27,7 @@ export function BlogIndex({ eyebrow, title, accent, description, posts, activeCa
             <Reveal>
               <p className="font-mono text-xs tracking-[0.18em] text-muted uppercase">{eyebrow}</p>
             </Reveal>
-            <h1 className="type-h1 mt-6">
+            <h1 className="type-display mt-6">
               <SplitWords text={title} />{" "}
               <SplitWords text={accent} delay={0.2} wordClassName="font-serif font-normal italic" />
             </h1>

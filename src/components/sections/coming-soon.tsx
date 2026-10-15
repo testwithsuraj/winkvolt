@@ -28,7 +28,7 @@ export function ComingSoon({ service }: { service: Service }) {
           </Reveal>
         </div>
 
-        <ul className="mt-10 grid gap-px overflow-hidden rounded-[2rem] border border-line bg-line sm:mt-12 sm:grid-cols-2">
+        <ul className="mt-12 grid gap-px overflow-hidden rounded-[2rem] border border-line bg-line sm:mt-16 sm:grid-cols-2">
           {service.points.map((point, i) => (
             <li key={point} className="bg-paper">
               <Reveal delay={(i % 2) * 0.08} className="flex h-full items-center gap-5 p-7 sm:p-9">

@@ -293,7 +293,7 @@ function MobileMenu({ onNavigate }: { onNavigate: (href: string) => void }) {
                     <motion.a
                       href={item.href}
                       onClick={go(item.href)}
-                      className="flex items-baseline gap-4 py-1.5 type-h2 active:text-volt"
+                      className="flex items-baseline gap-4 py-1.5 text-[clamp(2rem,9vw,2.75rem)] leading-tight font-semibold tracking-[-0.035em] active:text-volt"
                       {...enter(i)}
                     >
                       <span className="font-mono text-sm tracking-normal text-paper/50">0{i + 1}</span>
@@ -313,7 +313,7 @@ function MobileMenu({ onNavigate }: { onNavigate: (href: string) => void }) {
                           <a
                             href={serviceHref(s.slug)}
                             onClick={go(serviceHref(s.slug))}
-                            className="flex items-center gap-2 py-1.5 text-base text-paper/80 active:text-volt"
+                            className="flex items-center gap-2 py-1.5 text-lg text-paper/80 active:text-volt"
                           >
                             {s.title}
                             {s.status === "soon" && <SoonBadge className="bg-paper/10 text-paper/60" />}

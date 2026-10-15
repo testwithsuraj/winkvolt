@@ -121,51 +121,75 @@
 }
 
 /*
- * Global type scale. Every heading and paragraph on the site uses these,
- * so sizes stay consistent across pages, blog posts and docs.
- *   type-h1   30 → 40px   page / hero titles
- *   type-h2   24 → 30px   section titles
- *   type-h3   18 → 20px   card and sub-section titles
- *   type-h4   16px        small titles
- *   type-lead 16 → 17px   intro paragraph under a title
- *   type-body 15 → 16px   regular paragraphs
+ * Global type scale. Each role has one size, used the same way everywhere.
+ * Sizes grow smoothly from phone to desktop (values at 375px → 1440px).
+ *   type-display  40 → 68px   home hero, page heroes, closing CTA
+ *   type-h1       36 → 56px   article / legal page titles
+ *   type-h2       32 → 48px   section titles
+ *   type-title    26 → 36px   large feature cards, process steps, article sections
+ *   type-h3       22 → 28px   regular card titles
+ *   type-h4       20px        small titles, FAQ questions
+ *   type-stat     48 → 88px   big numbers
+ *   type-lead     17 → 20px   intro paragraph under a title
+ *   type-body     16 → 18px   regular paragraphs
  */
+@utility type-display {
+  font-size: clamp(2.5rem, 1.4rem + 3.4vw, 4.25rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+}
+
 @utility type-h1 {
-  font-size: clamp(1.875rem, 1.6rem + 1.2vw, 2.5rem);
-  line-height: 1.08;
+  font-size: clamp(2.25rem, 1.5rem + 2.4vw, 3.5rem);
+  line-height: 1.05;
   letter-spacing: -0.035em;
   font-weight: 600;
 }
 
 @utility type-h2 {
-  font-size: clamp(1.5rem, 1.35rem + 0.6vw, 1.875rem);
+  font-size: clamp(2rem, 1.4rem + 2vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  font-weight: 600;
+}
+
+@utility type-title {
+  font-size: clamp(1.625rem, 1.3rem + 1.1vw, 2.25rem);
   line-height: 1.12;
   letter-spacing: -0.03em;
   font-weight: 600;
 }
 
 @utility type-h3 {
-  font-size: clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem);
-  line-height: 1.3;
-  letter-spacing: -0.015em;
+  font-size: clamp(1.375rem, 1.2rem + 0.6vw, 1.75rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
   font-weight: 600;
 }
 
 @utility type-h4 {
-  font-size: 1rem;
-  line-height: 1.4;
-  letter-spacing: -0.01em;
+  font-size: 1.25rem;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+  font-weight: 600;
+}
+
+@utility type-stat {
+  font-size: clamp(3rem, 1.8rem + 4.5vw, 5.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
   font-weight: 600;
 }
 
 @utility type-lead {
-  font-size: clamp(1rem, 0.95rem + 0.2vw, 1.0625rem);
-  line-height: 1.65;
+  font-size: clamp(1.0625rem, 0.98rem + 0.35vw, 1.25rem);
+  line-height: 1.6;
 }
 
 @utility type-body {
-  font-size: clamp(0.9375rem, 0.9rem + 0.15vw, 1rem);
-  line-height: 1.7;
+  font-size: clamp(1rem, 0.95rem + 0.2vw, 1.125rem);
+  line-height: 1.65;
 }
 
 @keyframes accordion-down {

@@ -26,7 +26,7 @@ export function PageHero({ eyebrow, title, accent, description, actions, aside, 
               {eyebrow}
             </div>
           </Reveal>
-          <h1 className="type-h1 mt-7">
+          <h1 className="type-display mt-7">
             <SplitWords text={title} />
             {accent && (
               <>

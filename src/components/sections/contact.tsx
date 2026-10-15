@@ -9,7 +9,7 @@ import { site } from "@/lib/site";
 
 export function Contact({ index = "06" }: { index?: string }) {
   return (
-    <section id="contact" aria-labelledby="contact-title" className="overflow-hidden bg-volt py-16 text-ink sm:py-20 lg:py-24">
+    <section id="contact" aria-labelledby="contact-title" className="overflow-hidden bg-volt py-20 text-ink sm:py-24 lg:py-28">
       <div className="container-x grid items-center gap-12 lg:grid-cols-12 lg:gap-8">
         <div className="lg:col-span-8">
           <Reveal>
@@ -18,7 +18,7 @@ export function Contact({ index = "06" }: { index?: string }) {
             </SectionLabel>
           </Reveal>
 
-          <h2 id="contact-title" className="type-h2 mt-8">
+          <h2 id="contact-title" className="type-display mt-8">
             <SplitWords text="Got an idea?" className="block" />
             <span className="block">
               <SplitWords text="Let's make it" delay={0.15} />{" "}

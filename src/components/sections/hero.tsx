@@ -54,7 +54,7 @@ export function Hero() {
             <span className="hidden text-muted sm:inline">· AR, games &amp; apps</span>
           </motion.div>
 
-          <h1 className="type-h1 lg:whitespace-nowrap">
+          <h1 className="type-display lg:whitespace-nowrap">
             <span className="sr-only">We build things people play with.</span>
             <span aria-hidden>
               <SplitWords text="We build things" className="block" />
@@ -104,13 +104,13 @@ export function Hero() {
           >
             <div className="pr-6">
               <dt className="text-sm text-muted">Lenses built</dt>
-              <dd className="mt-1 text-xl font-semibold tracking-tight tabular">
+              <dd className="mt-1 text-3xl font-semibold tracking-tight tabular">
                 <Counter to={150} suffix="+" delay={0.7} />
               </dd>
             </div>
             <div className="px-6">
               <dt className="text-sm text-muted">Total views</dt>
-              <dd className="mt-1 text-xl font-semibold tracking-tight tabular">
+              <dd className="mt-1 text-3xl font-semibold tracking-tight tabular">
                 <Counter to={500} suffix="M+" delay={0.8} />
               </dd>
             </div>

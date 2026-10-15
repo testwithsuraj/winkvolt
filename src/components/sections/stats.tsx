@@ -5,7 +5,7 @@ import { stats } from "@/lib/site";
 
 export function Stats({ index = "01" }: { index?: string }) {
   return (
-    <section aria-labelledby="stats-title" className="py-16 sm:py-20 lg:py-24">
+    <section aria-labelledby="stats-title" className="py-20 sm:py-24 lg:py-32">
       <div className="container-x">
         <div className="grid gap-8 lg:grid-cols-12">
           <Reveal className="lg:col-span-4">
@@ -20,12 +20,12 @@ export function Stats({ index = "01" }: { index?: string }) {
           </Reveal>
         </div>
 
-        <div className="mt-10 grid gap-px overflow-hidden rounded-[2rem] border border-line bg-line sm:mt-12 md:grid-cols-2">
+        <div className="mt-12 grid gap-px overflow-hidden rounded-[2rem] border border-line bg-line sm:mt-16 md:grid-cols-2">
           {stats.map((stat, i) => (
             <Reveal
               key={stat.label}
               delay={i * 0.1}
-              className="group @container relative flex min-h-44 flex-col justify-between gap-10 overflow-hidden bg-paper p-7 transition-colors duration-500 hover:bg-ink hover:text-paper sm:p-9"
+              className="group @container relative flex min-h-56 flex-col justify-between gap-10 overflow-hidden bg-paper p-7 transition-colors duration-500 hover:bg-ink hover:text-paper sm:p-9"
             >
               <div className="flex items-center justify-between">
                 <span className="font-mono text-xs tracking-[0.18em] text-muted uppercase transition-colors duration-500 group-hover:text-paper/60">
@@ -44,7 +44,7 @@ export function Stats({ index = "01" }: { index?: string }) {
                   to={stat.value}
                   delay={i * 0.12}
                   suffix={stat.suffix}
-                  className="block type-h1 tabular"
+                  className="block type-stat tabular"
                 />
                 <p className="mt-4 text-base text-muted transition-colors duration-500 group-hover:text-paper/70">
                   {stat.note}

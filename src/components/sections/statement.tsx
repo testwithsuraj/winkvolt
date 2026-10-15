@@ -25,11 +25,11 @@ export function Statement() {
   const words = text.split(" ");
 
   return (
-    <section aria-label="Our approach" className="bg-ink py-16 text-paper sm:py-20 lg:py-28">
+    <section aria-label="Our approach" className="bg-ink py-20 text-paper sm:py-28 lg:py-36">
       <div className="container-x">
         <p
           ref={ref}
-          className="max-w-4xl type-h2"
+          className="max-w-5xl text-[clamp(1.75rem,1.1rem+2.4vw,3.25rem)] leading-[1.12] font-semibold tracking-[-0.035em]"
         >
           <span className="sr-only">{text}</span>
           <span aria-hidden>

@@ -47,7 +47,7 @@ export function LensTypes({ index = "02" }: { index?: string }) {
           </Reveal>
         </div>
 
-        <ul className="mt-10 grid gap-4 sm:mt-12 md:grid-cols-2">
+        <ul className="mt-12 grid gap-4 sm:mt-16 md:grid-cols-2">
           {lensTypes.map((type, i) => (
             <li key={type.title}>
               <Reveal delay={(i % 2) * 0.08} className="h-full">

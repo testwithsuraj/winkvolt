@@ -5,7 +5,7 @@ import { faqs, site } from "@/lib/site";
 
 export function Faq({ index = "05" }: { index?: string }) {
   return (
-    <section id="faq" aria-labelledby="faq-title" className="py-16 sm:py-20 lg:py-24">
+    <section id="faq" aria-labelledby="faq-title" className="py-20 sm:py-24 lg:py-32">
       <div className="container-x grid gap-12 lg:grid-cols-12 lg:gap-8">
         <div className="lg:col-span-5">
           <Reveal>

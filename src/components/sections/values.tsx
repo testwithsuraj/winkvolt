@@ -18,7 +18,7 @@ export function Values({ index = "02" }: { index?: string }) {
             </h2>
           </Reveal>
         </div>
-        <ul className="mt-10 grid gap-px overflow-hidden rounded-[2rem] border border-paper/10 bg-paper/10 sm:mt-12 md:grid-cols-2">
+        <ul className="mt-12 grid gap-px overflow-hidden rounded-[2rem] border border-paper/10 bg-paper/10 sm:mt-16 md:grid-cols-2">
           {values.map((v, i) => (
             <li key={v.title} className="bg-ink">
               <Reveal

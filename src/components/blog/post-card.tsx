@@ -61,7 +61,7 @@ export function PostCard({ post, featured = false }: { post: BlogPost; featured?
         <h3
           className={cn(
             "mt-3 font-semibold tracking-tight text-balance",
-            featured ? "type-h2" : "type-h3",
+            featured ? "type-title" : "type-h3",
           )}
         >
           <Link href={postHref(post.slug)} className="outline-none after:absolute after:inset-0 after:rounded-[2rem]">

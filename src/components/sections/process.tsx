@@ -14,7 +14,7 @@ export function Process({ index = "04" }: { index?: string }) {
   const progress = useSpring(scrollYProgress, { stiffness: 140, damping: 26 });
 
   return (
-    <section id="process" aria-labelledby="process-title" className="py-16 sm:py-20 lg:py-24">
+    <section id="process" aria-labelledby="process-title" className="py-20 sm:py-24 lg:py-32">
       <div className="container-x grid gap-12 lg:grid-cols-12 lg:gap-8">
         <div className="lg:col-span-5">
           <div className="lg:sticky lg:top-32">
@@ -98,7 +98,7 @@ function Step({ item, last }: { item: (typeof process)[number]; last: boolean })
 
         <h3
           className={cn(
-            "mt-4 type-h3 transition-colors duration-500",
+            "mt-4 type-title transition-colors duration-500",
             active ? "text-ink" : "text-ink/25",
           )}
         >
