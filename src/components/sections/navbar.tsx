@@ -172,7 +172,7 @@ export function Navbar() {
           <div
             className={cn(
               "flex h-14 items-center justify-between rounded-full border pr-2 pl-3 transition-[background-color,border-color] duration-500 sm:h-16 sm:pl-4",
-              scrolled || menuValue ? "border-line bg-paper/90 backdrop-blur-md" : "border-transparent bg-transparent",
+              scrolled || menuValue ? "border-line bg-paper/95" : "border-transparent bg-transparent",
             )}
           >
             <Link href="/" aria-label={`${site.name} home`} className="rounded-full">

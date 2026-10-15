@@ -5,6 +5,7 @@ import { MotionConfig } from "motion/react";
 import { JsonLd } from "@/components/json-ld";
 import { Footer } from "@/components/sections/footer";
 import { Navbar } from "@/components/sections/navbar";
+import { BackToTop } from "@/components/ui/back-to-top";
 import { scrollResetScript, SmoothScroll } from "@/components/smooth-scroll";
 import { site } from "@/lib/site";
 import "lenis/dist/lenis.css";
@@ -116,6 +117,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <Navbar />
             <main id="main">{children}</main>
             <Footer />
+            <BackToTop />
           </SmoothScroll>
         </MotionConfig>
       </body>

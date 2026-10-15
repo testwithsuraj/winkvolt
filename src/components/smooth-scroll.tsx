@@ -2,7 +2,8 @@
 
 import * as React from "react";
 import { usePathname } from "next/navigation";
-import { ReactLenis, useLenis } from "lenis/react";
+import { cancelFrame, frame } from "motion/react";
+import { ReactLenis, useLenis, type LenisRef } from "lenis/react";
 
 /**
  * Runs before first paint (inlined in <head>): a refresh or fresh visit always
@@ -34,14 +35,33 @@ function RouteScroll() {
   return null;
 }
 
-/** Site-wide smooth scrolling. In-page anchor links glide to their section (offset by `scroll-padding-top` in globals.css). */
+/**
+ * Site-wide smooth scrolling on every page. In-page anchor links glide to their
+ * section (offset by `scroll-padding-top` in globals.css).
+ *
+ * Lenis is driven from Motion's frame loop instead of its own requestAnimationFrame,
+ * so the scroll position and every scroll-linked animation (progress bar, sticky
+ * service cards, statement words) update in the same frame and never drift apart.
+ */
 export function SmoothScroll({ children }: { children: React.ReactNode }) {
+  const lenisRef = React.useRef<LenisRef>(null);
+
+  React.useEffect(() => {
+    const update = ({ timestamp }: { timestamp: number }) => lenisRef.current?.lenis?.raf(timestamp);
+    frame.update(update, true);
+    return () => cancelFrame(update);
+  }, []);
+
   return (
     <ReactLenis
       root
+      ref={lenisRef}
       options={{
-        lerp: 0.09,
+        autoRaf: false,
+        lerp: 0.1,
+        smoothWheel: true,
         wheelMultiplier: 1,
+        touchMultiplier: 1.5,
         anchors: true,
         stopInertiaOnNavigate: true,
       }}
