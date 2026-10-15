@@ -42,7 +42,7 @@ export function Hero() {
     >
       <div className="container-x grid flex-1 items-center gap-10 lg:grid-cols-12 lg:gap-10 xl:gap-16">
         {/* copy */}
-        <div className="lg:col-span-6">
+        <div className="lg:col-span-7">
           <motion.div
             {...fadeUp(0)}
             className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-line bg-paper-2 py-1.5 pr-4 pl-1.5 text-sm lg:mb-[min(1.75rem,3vh)]"
@@ -54,7 +54,7 @@ export function Hero() {
             <span className="hidden text-muted sm:inline">· AR, games &amp; apps</span>
           </motion.div>
 
-          <h1 className="type-display lg:whitespace-nowrap">
+          <h1 className="type-display lg:text-[clamp(3.5rem,min(1.2rem+4.4vw,11.5vh),5.25rem)] lg:whitespace-nowrap">
             <span className="sr-only">We build things people play with.</span>
             <span aria-hidden>
               <SplitWords text="We build things" className="block" />
@@ -73,7 +73,7 @@ export function Hero() {
 
           <motion.p
             {...fadeUp(0.45)}
-            className="mt-6 max-w-lg type-lead text-muted lg:mt-[min(1.5rem,3vh)] lg:max-w-md"
+            className="mt-6 max-w-xl type-lead text-muted lg:mt-[min(1.75rem,3vh)] lg:max-w-[40rem]"
           >
             WinkVolt designs and builds Snapchat Lenses, Roblox games
             <Soon /> and mobile apps
@@ -122,7 +122,7 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, delay: 0.2, ease }}
-          className="relative mx-auto flex w-full max-w-[30rem] flex-col items-center sm:max-w-[34rem] lg:col-span-6 lg:max-w-none"
+          className="relative mx-auto flex w-full max-w-[30rem] flex-col items-center sm:max-w-[34rem] lg:col-span-5 lg:mx-0 lg:w-fit lg:max-w-full lg:justify-self-start"
         >
           <HeroScene className="aspect-square w-full select-none lg:h-[min(calc(100svh-12rem),36rem)] lg:w-auto lg:max-w-full" />
           <p className="mt-3 font-mono text-[0.68rem] tracking-[0.18em] text-muted uppercase">
