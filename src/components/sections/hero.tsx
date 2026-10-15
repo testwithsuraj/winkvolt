@@ -54,7 +54,7 @@ export function Hero() {
             <span className="hidden text-muted sm:inline">· AR, games &amp; apps</span>
           </motion.div>
 
-          <h1 className="type-display lg:text-[clamp(3.5rem,min(1.2rem+4.4vw,11.5vh),5.25rem)] lg:whitespace-nowrap">
+          <h1 className="type-display lg:text-[clamp(3.25rem,min(1.2rem+3.8vw,10.5vh),4.5rem)] lg:whitespace-nowrap">
             <span className="sr-only">We build things people play with.</span>
             <span aria-hidden>
               <SplitWords text="We build things" className="block" />
@@ -73,7 +73,7 @@ export function Hero() {
 
           <motion.p
             {...fadeUp(0.45)}
-            className="mt-6 max-w-xl type-lead text-muted lg:mt-[min(1.75rem,3vh)] lg:max-w-[40rem]"
+            className="mt-6 max-w-xl type-lead text-muted lg:mt-[min(1.75rem,3vh)] lg:max-w-[33rem]"
           >
             WinkVolt designs and builds Snapchat Lenses, Roblox games
             <Soon /> and mobile apps
