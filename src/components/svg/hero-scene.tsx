@@ -345,7 +345,7 @@ export function HeroScene({ className }: { className?: string }) {
           <circle cx="54" cy="196" r="17" className="fill-signal" />
           <circle cx="54" cy="196" r="6" className="fill-ink" />
           <text x="80" y="203" className="fill-paper font-sans text-[20px] font-semibold tracking-tight">
-            500M+ views
+            300M+ views
           </text>
         </motion.g>
 

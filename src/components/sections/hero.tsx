@@ -111,7 +111,7 @@ export function Hero() {
             <div className="px-6">
               <dt className="text-sm text-muted">Total views</dt>
               <dd className="mt-1 text-3xl font-semibold tracking-tight tabular">
-                <Counter to={500} suffix="M+" delay={0.8} />
+                <Counter to={300} suffix="M+" delay={0.8} />
               </dd>
             </div>
           </motion.dl>

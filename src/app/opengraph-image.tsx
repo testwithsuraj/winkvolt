@@ -45,7 +45,7 @@ export default function OpengraphImage() {
             ["#0e0e0c", "#f2efe8", "Snapchat Lenses"],
             ["#2f4bff", "#f2efe8", "Roblox · Soon"],
             ["#ff5b2e", "#0e0e0c", "Apps · Soon"],
-            ["#dcff3b", "#0e0e0c", "150+ lenses · 500M+ views"],
+            ["#dcff3b", "#0e0e0c", "150+ lenses · 300M+ views"],
           ].map(([bg, fg, label]) => (
             <div
               key={label}

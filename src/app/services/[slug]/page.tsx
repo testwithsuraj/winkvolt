@@ -28,8 +28,8 @@ const copy = {
     title: "Snapchat Lenses people",
     accent: "play.",
     description:
-      "Face, world and game lenses built in Lens Studio, from first concept to launch. 150+ lenses built and 500M+ total views so far.",
-    meta: "Snapchat Lens studio: face, world and game lenses and sponsored brand lenses built in Lens Studio. 150+ lenses built, 500M+ total views.",
+      "Face, world and game lenses built in Lens Studio, from first concept to launch. 150+ lenses built and 300M+ total views so far.",
+    meta: "Snapchat Lens studio: face, world and game lenses and sponsored brand lenses built in Lens Studio. 150+ lenses built, 300M+ total views.",
   },
   roblox: {
     title: "Roblox games are",

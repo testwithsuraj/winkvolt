@@ -4,7 +4,7 @@ import * as React from "react";
 import { motion, useScroll, useTransform, type MotionValue } from "motion/react";
 
 const text =
-  "150+ lenses and 500M+ views taught us one thing: people don't share software, they share moments. We build the moments.";
+  "150+ lenses and 300M+ views taught us one thing: people don't share software, they share moments. We build the moments.";
 
 function Word({ word, range, progress }: { word: string; range: [number, number]; progress: MotionValue<number> }) {
   const opacity = useTransform(progress, range, [0.15, 1]);

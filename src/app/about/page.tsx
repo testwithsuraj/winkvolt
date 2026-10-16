@@ -10,7 +10,7 @@ import { pageMetadata } from "@/lib/metadata";
 export const metadata = pageMetadata({
   title: "About",
   description:
-    "WinkVolt is a creative technology studio building Snapchat Lenses people play and share, with 150+ lenses built and 500M+ total views. Roblox games and mobile apps are next.",
+    "WinkVolt is a creative technology studio building Snapchat Lenses people play and share, with 150+ lenses built and 300M+ total views. Roblox games and mobile apps are next.",
   path: "/about",
 });
 
@@ -21,7 +21,7 @@ export default function AboutPage() {
         eyebrow="About WinkVolt"
         title="A studio for things people"
         accent="play with."
-        description="We started with Snapchat Lenses because they're the fastest way to put play in people's hands. 150+ lenses and 500M+ views later, we're bringing the same thinking to Roblox and mobile apps."
+        description="We started with Snapchat Lenses because they're the fastest way to put play in people's hands. 150+ lenses and 300M+ views later, we're bringing the same thinking to Roblox and mobile apps."
         aside={
           <div className="grid aspect-square place-items-center rounded-[2rem] bg-volt">
             <LogoMark className="size-[45%]" interval={3500} />

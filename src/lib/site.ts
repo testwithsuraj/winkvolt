@@ -6,7 +6,7 @@ export const site = {
   bookingUrl: "https://cal.com/winkvolt/15min",
   tagline: "We build things people play with.",
   description:
-    "WinkVolt is a creative technology studio building Snapchat Lenses people play and share: 150+ lenses built and 500M+ total views. Roblox games and mobile apps coming soon.",
+    "WinkVolt is a creative technology studio building Snapchat Lenses people play and share: 150+ lenses built and 300M+ total views. Roblox games and mobile apps coming soon.",
 } as const;
 
 export type ServiceKey = "lenses" | "roblox" | "apps";
@@ -76,7 +76,7 @@ export const legalLinks = [
 
 export const stats = [
   { value: 150, suffix: "+", label: "Lenses built", note: "Face, world and game lenses" },
-  { value: 500, suffix: "M+", label: "Total views", note: "Across every lens we've shipped" },
+  { value: 300, suffix: "M+", label: "Total views", note: "Across every lens we've shipped" },
 ] as const;
 
 export const marqueeItems = [

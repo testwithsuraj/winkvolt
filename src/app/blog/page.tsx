@@ -5,7 +5,7 @@ import { pageMetadata } from "@/lib/metadata";
 import { site } from "@/lib/site";
 
 const description =
-  "Guides, ideas and lessons from building 150+ Snapchat Lenses with 500M+ total views: lens types, costs, timelines, sharing and AR marketing.";
+  "Guides, ideas and lessons from building 150+ Snapchat Lenses with 300M+ total views: lens types, costs, timelines, sharing and AR marketing.";
 
 export const metadata = {
   ...pageMetadata({ title: "Blog", description, path: "/blog" }),

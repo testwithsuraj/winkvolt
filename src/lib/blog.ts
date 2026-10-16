@@ -136,7 +136,7 @@ export const blogPosts: BlogPost[] = [
         blocks: [
           {
             type: "p",
-            text: "A banner is something people scroll past. A lens is something people **do**, and every time someone captures a Snap with it, they create a piece of content featuring your brand and send it to people who trust them. That is why lenses can travel so far: across the 150+ lenses we have built, they have reached over 500 million total views.",
+            text: "A banner is something people scroll past. A lens is something people **do**, and every time someone captures a Snap with it, they create a piece of content featuring your brand and send it to people who trust them. That is why lenses can travel so far: across the 150+ lenses we have built, they have reached over 300 million total views.",
           },
           {
             type: "p",
@@ -450,14 +450,14 @@ export const blogPosts: BlogPost[] = [
     title: "Seven ways to make a Snapchat Lens people actually share",
     seoTitle: "7 Ways to Make a Snapchat Lens People Actually Share",
     description:
-      "What we've learned from 150+ lenses and 500M+ views about designing lenses people capture and send on, from the first second to the final reveal.",
+      "What we've learned from 150+ lenses and 300M+ views about designing lenses people capture and send on, from the first second to the final reveal.",
     category: "ar-marketing",
     tags: ["Virality", "Lens design", "Engagement", "Best practices"],
     published: "2026-10-14",
     updated: "2026-10-14",
     cover: { art: "chart", tone: "volt", label: "A rising bar chart" },
     answer:
-      "People share a lens when it gives them a moment worth sending. To get there: make the payoff obvious in the first second, centre the person rather than the logo, build in a surprise, keep the interaction to one simple action, design for the capture moment, make it run smoothly on everyday phones, and give people a reason to come back. These lessons come from building 150+ lenses with 500M+ total views.",
+      "People share a lens when it gives them a moment worth sending. To get there: make the payoff obvious in the first second, centre the person rather than the logo, build in a surprise, keep the interaction to one simple action, design for the capture moment, make it run smoothly on everyday phones, and give people a reason to come back. These lessons come from building 150+ lenses with 300M+ total views.",
     takeaways: [
       "The first second decides whether someone keeps the lens open.",
       "People share lenses that make them look good, funny or surprising.",
@@ -631,14 +631,14 @@ export const blogPosts: BlogPost[] = [
     slug: "whats-next-roblox-games-and-mobile-apps",
     title: "What's next for WinkVolt: Roblox games and mobile apps",
     description:
-      "After 150+ Snapchat Lenses and 500M+ views, we're bringing our play-first approach to Roblox games and mobile apps. Here's what's coming.",
+      "After 150+ Snapchat Lenses and 300M+ views, we're bringing our play-first approach to Roblox games and mobile apps. Here's what's coming.",
     category: "studio-news",
     tags: ["Roblox", "Mobile apps", "Studio news", "Roadmap"],
     published: "2026-10-14",
     updated: "2026-10-14",
     cover: { art: "cubes", tone: "cobalt", label: "Stacked Roblox-style blocks" },
     answer:
-      "WinkVolt builds Snapchat Lenses today, and Roblox games and mobile apps are coming soon. We're taking what we learned from 150+ lenses and 500M+ views (fast feedback loops, social mechanics and designing for sharing) into Roblox experiences and iOS and Android apps. You can get in touch now to be first in line.",
+      "WinkVolt builds Snapchat Lenses today, and Roblox games and mobile apps are coming soon. We're taking what we learned from 150+ lenses and 300M+ views (fast feedback loops, social mechanics and designing for sharing) into Roblox experiences and iOS and Android apps. You can get in touch now to be first in line.",
     takeaways: [
       "Snapchat Lenses remain our core service, available now.",
       "Roblox games and mobile apps are coming soon.",
