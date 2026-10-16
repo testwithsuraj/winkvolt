@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { MotionConfig } from "motion/react";
 
 import { JsonLd } from "@/components/json-ld";
@@ -120,6 +121,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <BackToTop />
           </SmoothScroll>
         </MotionConfig>
+        <Analytics />
       </body>
     </html>
   );
