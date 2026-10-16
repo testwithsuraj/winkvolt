@@ -74,7 +74,7 @@ src/
 ## Editing content
 
 Copy, stats, services (and whether each is `live` or `soon`), navigation, capabilities, process steps, values and FAQs all live in `src/lib/site.ts`.
-Update `site.url`, `site.email` and `site.bookingUrl` (your Cal.com or Calendly link for the "Book a 15-min call" buttons) there before going live.
+Update `site.url`, `site.email` and `site.bookingUrl` (your Cal.com page, opened by every "Book a call" button) there before going live.
 
 ## Design notes
 
